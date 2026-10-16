@@ -490,6 +490,7 @@ dialog.modal::backdrop { background: rgba(14, 40, 48, .45); backdrop-filter: blu
 .modal-foot { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; padding: 14px 24px 20px; border-top: 1px solid var(--line); }
 .field label, .field .label { display: block; font-size: .78rem; font-weight: 700; margin-bottom: 6px; color: #33415a; }
 .field input { width: 100%; }
+.field input.sr-only { width: 1px; height: 1px; padding: 0; border: 0; }
 .field small { display: block; margin-top: 5px; color: var(--muted); font-size: .72rem; }
 .field-check { display: flex; align-items: center; gap: 8px; font-size: .84rem; }
 .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
