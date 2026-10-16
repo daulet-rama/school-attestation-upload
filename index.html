@@ -74,7 +74,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
                 <span id="headerHomeLabel"></span>
             </button>
-            <div class="language-switch" id="languageSwitch">
+            <div class="language-switch" id="languageSwitch" role="group">
                 <button type="button" data-lang="kk">ҚАЗ</button>
                 <button type="button" data-lang="ru">РУС</button>
             </div>
@@ -90,11 +90,13 @@
         <select id="categorySelect" class="category-select"></select>
     </section>
 
-    <div class="notices" id="notices" aria-live="polite"></div>
+    <div class="notices" id="notices"></div>
 
     <section class="stats" id="stats"></section>
 
-    <section id="workspace" class="workspace" aria-live="polite"></section>
+    <p class="sr-only" id="liveStatus" aria-live="polite"></p>
+
+    <section id="workspace" class="workspace"></section>
 
     <footer class="mobile-footer" id="mobileFooter"></footer>
 </main>

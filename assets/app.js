@@ -25,6 +25,7 @@
     const WORDS = {
         ru: {
             pageTitle: 'Документы аттестации',
+            pageTitleUpload: 'Загрузка документов аттестации',
             mainTitle: 'Документы аттестации',
             mainLead: 'Выберите категорию или найдите документ по названию.',
             mainLeadUpload: 'Загрузите документы по списку — в каждом разделе указано, какой файл нужен.',
@@ -59,7 +60,7 @@
             homeLeadUpload: 'Откройте папку, чтобы загрузить нужные документы',
             showAll: 'Показать все',
             open: 'открыть',
-            inSection: 'в разделе',
+            sectionLead: '{n} {word} в разделе',
             back: 'Назад',
             search: 'Поиск',
             searchTitle: 'Результаты поиска',
@@ -156,6 +157,7 @@
             downloadZip: 'Скачать архив ZIP',
             zipBuilding: 'Собираем архив…',
             zipReady: 'Архив скачан',
+            zipTooLarge: 'архив больше 4 ГБ — скачайте документы по частям или опубликуйте их на сайте',
             publishProgress: 'Публикация {i} из {n}…',
             publishDone: 'Опубликовано: {n}',
             publishSkipped: 'Не опубликовано (больше {mb} МБ): {n}. Замените их ссылкой на Google Диск.',
@@ -184,12 +186,22 @@
             errForbidden: 'у ключа нет права записи (Contents: Read and write)',
             errTooLarge: 'файл слишком большой для GitHub — используйте ссылку на Google Диск',
             errBusy: 'сайт занят другой загрузкой, попробуйте ещё раз',
+            errRateLimit: 'GitHub временно ограничил число запросов — повторите через несколько минут',
             errStorage: 'браузер не разрешает сохранять файлы (приватный режим?)',
-            kk: 'Қазақша',
-            ru: 'Русский'
+            kk: 'Казахский',
+            ru: 'Русский',
+            zipColSection: 'Раздел',
+            zipColDocument: 'Документ',
+            zipColStatus: 'Статус',
+            zipColFile: 'Файл / ссылка',
+            zipListName: 'Список документов',
+            zipLinksName: 'Ссылки',
+            zipSettingsFolder: '_Данные организации',
+            zipSettingsFile: 'данные'
         },
         kk: {
             pageTitle: 'Аттестаттау құжаттары',
+            pageTitleUpload: 'Аттестаттау құжаттарын жүктеу',
             mainTitle: 'Аттестаттау құжаттары',
             mainLead: 'Санатты таңдаңыз немесе құжатты атауы бойынша табыңыз.',
             mainLeadUpload: 'Құжаттарды тізім бойынша жүктеңіз — әр бөлімде қандай файл керек екені көрсетілген.',
@@ -224,7 +236,7 @@
             homeLeadUpload: 'Қажетті құжаттарды жүктеу үшін қалтаны ашыңыз',
             showAll: 'Барлығын көрсету',
             open: 'ашу',
-            inSection: 'бөлімде',
+            sectionLead: 'Бөлімде {n} {word}',
             back: 'Артқа',
             search: 'Іздеу',
             searchTitle: 'Іздеу нәтижелері',
@@ -269,7 +281,7 @@
             or: 'немесе',
             chooseFile: 'Файлды таңдау',
             formats: 'PDF, Word, Excel, PowerPoint немесе сурет',
-            maxSize: '{mb} МБ дейін',
+            maxSize: '{mb} МБ-қа дейін',
             anySize: 'браузердегі жоба — көлемі шектелмейді',
             linkLabel: 'Файл {mb} МБ-тан үлкен бе? Оны Google Дискіге жүктеп («Сілтемесі бар барлық адам» қолжетімділігі), сілтемені осында қойыңыз:',
             linkPlaceholder: 'https://drive.google.com/file/d/…',
@@ -320,6 +332,7 @@
             downloadZip: 'ZIP мұрағатын жүктеп алу',
             zipBuilding: 'Мұрағат жиналуда…',
             zipReady: 'Мұрағат жүктелді',
+            zipTooLarge: 'мұрағат 4 ГБ-тан үлкен — құжаттарды бөліп жүктеп алыңыз немесе сайтта жариялаңыз',
             publishProgress: 'Жариялау: {i} / {n}…',
             publishDone: 'Жарияланды: {n}',
             publishSkipped: 'Жарияланбады ({mb} МБ-тан үлкен): {n}. Оларды Google Диск сілтемесімен ауыстырыңыз.',
@@ -348,9 +361,18 @@
             errForbidden: 'кілтте жазу құқығы жоқ (Contents: Read and write)',
             errTooLarge: 'файл GitHub үшін тым үлкен — Google Диск сілтемесін пайдаланыңыз',
             errBusy: 'сайт басқа жүктеумен бос емес, қайталап көріңіз',
+            errRateLimit: 'GitHub сұраныстар санын уақытша шектеді — бірнеше минуттан кейін қайталаңыз',
             errStorage: 'браузер файлдарды сақтауға рұқсат бермейді (жеке режим?)',
             kk: 'Қазақша',
-            ru: 'Русский'
+            ru: 'Орысша',
+            zipColSection: 'Бөлім',
+            zipColDocument: 'Құжат',
+            zipColStatus: 'Күйі',
+            zipColFile: 'Файл / сілтеме',
+            zipListName: 'Құжаттар тізімі',
+            zipLinksName: 'Сілтемелер',
+            zipSettingsFolder: '_Ұйым деректері',
+            zipSettingsFile: 'деректер'
         }
     };
 
@@ -462,7 +484,7 @@
         if (!value) return '';
         if (/^\d{2}\.\d{2}\.\d{4}$/.test(value)) return value;
         const date = new Date(value);
-        if (Number.isNaN(date.getTime())) return String(value);
+        if (Number.isNaN(date.getTime())) return '';
         const pad = n => String(n).padStart(2, '0');
         return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}.${date.getFullYear()}`;
     }
@@ -508,6 +530,7 @@
         token: null,
         user: '',
         canPush: false,
+        publishing: false,
         queue: Promise.resolve()
     };
 
@@ -515,13 +538,58 @@
         return {version: 1, updated_at: null, settings: {}, files: {}};
     }
 
+    const FILE_PATH = /^files\/[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+-[0-9a-f]{8}\.[a-z0-9]{1,6}$/;
+    const IMAGE_PATH = /^files\/_school\/[a-z_]+-[0-9a-f]{8}\.(jpg|jpeg|png|webp)$/;
+    const isPlain = value => Boolean(value) && typeof value === 'object' && !Array.isArray(value);
+    const validDate = value => (typeof value === 'string' && !Number.isNaN(new Date(value).getTime()) ? value : null);
+
+    /* manifest.json может править любой, у кого есть доступ к репозиторию,
+       поэтому берём из него только записи ожидаемого вида. */
+    function normalizeFileEntry(entry) {
+        if (!isPlain(entry)) return null;
+        const base = {uploaded_at: validDate(entry.uploaded_at), by: typeof entry.by === 'string' ? entry.by : null};
+        if (typeof entry.path === 'string' && FILE_PATH.test(entry.path) && FORMATS[extOf(entry.path)]) {
+            return {
+                ...base,
+                path: entry.path,
+                ext: extOf(entry.path),
+                name: typeof entry.name === 'string' ? entry.name : entry.path.split('/').pop(),
+                size: Number.isFinite(entry.size) ? entry.size : 0
+            };
+        }
+        if (typeof entry.link === 'string' && parseLink(entry.link)) return {...base, link: parseLink(entry.link).url};
+        return null;
+    }
+
+    function normalizeSettings(settings) {
+        const result = {};
+        if (!isPlain(settings)) return result;
+        Object.entries(settings).forEach(([key, value]) => {
+            if (key === 'logo' || key === 'director_photo') {
+                if (typeof value === 'string' && IMAGE_PATH.test(value)) result[key] = value;
+            } else if (typeof value === 'string') {
+                result[key] = value;
+            } else if (isPlain(value)) {
+                result[key] = {
+                    kk: typeof value.kk === 'string' ? value.kk : '',
+                    ru: typeof value.ru === 'string' ? value.ru : ''
+                };
+            }
+        });
+        return result;
+    }
+
     function normalizeManifest(data) {
         const manifest = emptyManifest();
-        if (data && typeof data === 'object') {
-            manifest.version = data.version || 1;
-            manifest.updated_at = data.updated_at || null;
-            manifest.settings = data.settings && typeof data.settings === 'object' ? data.settings : {};
-            manifest.files = data.files && typeof data.files === 'object' ? data.files : {};
+        if (!isPlain(data)) return manifest;
+        manifest.version = Number(data.version) || 1;
+        manifest.updated_at = validDate(data.updated_at);
+        manifest.settings = normalizeSettings(data.settings);
+        if (isPlain(data.files)) {
+            Object.entries(data.files).forEach(([id, entry]) => {
+                const clean = normalizeFileEntry(entry);
+                if (clean) manifest.files[id] = clean;
+            });
         }
         return manifest;
     }
@@ -541,6 +609,13 @@
     /* ───────────── Источник документа (для просмотра) ───────────── */
 
     const objectUrls = new Map();
+    function revokeUrl(key) {
+        const cached = objectUrls.get(key);
+        if (!cached) return;
+        URL.revokeObjectURL(cached.url);
+        objectUrls.delete(key);
+    }
+
     function blobUrl(key, blob) {
         const cached = objectUrls.get(key);
         if (cached && cached.blob === blob) return cached.url;
@@ -572,7 +647,8 @@
     }
 
     function linkSource(link, extra = {}) {
-        const parsed = parseLink(link) || {url: link};
+        // Ссылки не на http(s) (например, javascript:) не выводятся вовсе.
+        const parsed = parseLink(link) || {url: '', driveId: null, preview: null};
         const driveId = parsed.driveId;
         return {
             kind: 'link',
@@ -673,34 +749,46 @@
 
     /* ───────────── Маршруты ───────────── */
 
-    function parseRoute() {
-        const raw = location.hash.replace(/^#\/?/, '');
-        const parts = raw.split('/');
-        const decode = value => { try { return decodeURIComponent(value || ''); } catch (_) { return value || ''; } };
-        if (parts[0] === 'c' && parts[1]) return {type: 'category', id: decode(parts[1])};
-        if (parts[0] === 'd' && parts[1]) return {type: 'document', id: decode(parts[1])};
-        if (parts[0] === 'search') return {type: 'search', cat: decode(parts[1]) || 'all', q: decode(parts.slice(2).join('/'))};
+    const decodePart = value => {
+        try { return decodeURIComponent(value || ''); } catch (_) { return value || ''; }
+    };
+
+    function parseHash(hash) {
+        const parts = String(hash || '').replace(/^#\/?/, '').split('/');
+        if (parts[0] === 'c' && parts[1]) return {type: 'category', id: decodePart(parts[1])};
+        if (parts[0] === 'd' && parts[1]) return {type: 'document', id: decodePart(parts[1])};
+        if (parts[0] === 'search') return {type: 'search', cat: decodePart(parts[1]) || 'all', q: decodePart(parts.slice(2).join('/'))};
         return {type: 'home'};
     }
 
+    const currentHash = () => location.hash || '#/';
+    const parseRoute = () => parseHash(currentHash());
     const hrefCategory = id => `#/c/${encodeURIComponent(id)}`;
     const hrefDocument = id => `#/d/${encodeURIComponent(id)}`;
     const hrefSearch = (cat, q) => `#/search/${encodeURIComponent(cat || 'all')}/${encodeURIComponent(q)}`;
 
-    let lastListHash = '#/';
     let currentRoute = {type: 'home'};
+    let renderedHash = null;
+    const listScroll = new Map();
 
+    /* Каждый переход — запись в истории; в state запоминаем, откуда пришли,
+       чтобы кнопка «Назад» делала шаг назад по истории, а не новый переход. */
     function navigate(hash, {replace = false} = {}) {
-        const current = location.hash || '#/';
-        if (current === hash) {
-            render({scroll: !replace});
-            return;
-        }
-        if (replace) {
-            history.replaceState(null, '', hash);
-            render({scroll: false});
-        } else {
-            location.hash = hash;
+        if (replace) history.replaceState(history.state, '', hash);
+        else if (currentHash() !== hash) history.pushState({from: currentHash()}, '', hash);
+        render({scroll: !replace});
+    }
+
+    function goBack(target) {
+        if (history.state?.from === target) history.back();
+        else navigate(target);
+    }
+
+    function scrollToY(top) {
+        try {
+            window.scrollTo({top, behavior: 'instant'});
+        } catch (_) {
+            window.scrollTo(0, top);
         }
     }
 
@@ -708,10 +796,15 @@
 
     const openSubcategories = new Set();
 
-    function render({scroll = false, keepScroll = false} = {}) {
+    function render({scroll = false, keepScroll = false, traversal = false} = {}) {
         const route = parseRoute();
         const previousType = currentRoute.type;
+        const hash = currentHash();
+        if (renderedHash !== null && renderedHash !== hash && previousType !== 'document') {
+            listScroll.set(renderedHash, window.scrollY);
+        }
         currentRoute = route;
+        renderedHash = hash;
         const savedScroll = window.scrollY;
 
         let html;
@@ -720,36 +813,50 @@
         else if (route.type === 'search') html = viewSearch(route.q, route.cat);
         else html = viewHome();
 
-        if (route.type !== 'document') lastListHash = location.hash || '#/';
         document.body.classList.toggle('document-mode', route.type === 'document');
         el.workspace.innerHTML = `<div class="${keepScroll ? '' : 'workspace-enter'}">${html}</div>`;
 
-        syncSearchControls(route);
+        syncSearchControls(route, traversal);
+        if (!keepScroll) announce(route);
         renderStats();
         renderNotices();
         hydratePreviews();
 
         if (keepScroll) {
-            window.scrollTo(0, savedScroll);
+            scrollToY(savedScroll);
         } else if (scroll) {
-            if (route.type === 'document' || (route.type === 'home' && previousType === 'document')) {
-                window.scrollTo({top: 0});
+            if (route.type === 'document') {
+                scrollToY(0);
+            } else if (previousType === 'document' && listScroll.has(hash)) {
+                scrollToY(listScroll.get(hash));
+            } else if (route.type === 'home' && previousType === 'document') {
+                scrollToY(0);
             } else {
                 const top = el.workspace.getBoundingClientRect().top + window.scrollY - 16;
-                if (window.scrollY > top) window.scrollTo({top});
+                if (window.scrollY > top) scrollToY(top);
             }
         }
     }
 
     const rerender = () => render({keepScroll: true});
 
-    function syncSearchControls(route) {
+    function announce(route) {
+        const live = $('#liveStatus');
+        if (!live) return;
+        const heading = $('h3', el.workspace)?.textContent || '';
+        const extra = route.type === 'search' ? $('.view-title p', el.workspace)?.textContent || '' : '';
+        live.textContent = [heading, extra].filter(Boolean).join('. ');
+    }
+
+    /* Пока посетитель печатает, поле поиска не трогаем; при переходе по истории — синхронизируем. */
+    function syncSearchControls(route, force = false) {
+        const typing = !force && document.activeElement === el.search;
         if (route.type === 'search') {
-            if (document.activeElement !== el.search) el.search.value = route.q;
-            el.select.value = catIndex.has(route.cat) && catalogs.some(c => c.id === route.cat) ? route.cat : 'all';
+            if (!typing) el.search.value = route.q;
+            el.select.value = catalogs.some(c => c.id === route.cat) ? route.cat : 'all';
             return;
         }
-        if (document.activeElement !== el.search) el.search.value = '';
+        if (!typing) el.search.value = '';
         if (route.type === 'category') {
             const entry = catIndex.get(route.id);
             el.select.value = entry ? entry.top.id : 'all';
@@ -779,7 +886,7 @@
     }
 
     function meter(percent, done = false) {
-        return `<div class="meter${done ? ' is-done' : ''}" role="presentation"><i style="--p:${percent}%"></i></div>`;
+        return `<span class="meter${done ? ' is-done' : ''}" aria-hidden="true"><i style="--p:${percent}%"></i></span>`;
     }
 
     function viewHome() {
@@ -837,7 +944,7 @@
             crumbs.push({label: title(node), href: last ? null : hrefCategory(node.id)});
         });
         const parentHref = entry.path.length > 1 ? hrefCategory(entry.path[entry.path.length - 2].id) : '#/';
-        let lead = `${docs.length} ${docWord(docs.length)} ${t('inSection')}`;
+        let lead = t('sectionLead', {n: docs.length, word: docWord(docs.length)});
         if (UPLOAD) {
             const progress = progressOf(docs);
             lead = `${progress.done} / ${progress.total} ${t('uploadedShort')}`;
@@ -848,16 +955,17 @@
         if (direct.length) body += documentRows(direct);
         else if (!subcategories) body += emptyState();
         return `<div class="view-toolbar"><div class="view-title">${breadcrumb(crumbs)}<h3>${esc(title(category))}</h3><p>${lead}</p></div>`
-            + `<button class="back-button" type="button" data-go="${esc(parentHref)}">← ${t('back')}</button></div>${body}`;
+            + `<button class="back-button" type="button" data-back="${esc(parentHref)}">← ${t('back')}</button></div>${body}`;
     }
 
     function viewNotFound() {
         return `<div class="view-toolbar"><div class="view-title"><h3>${t('notFound')}</h3></div>`
-            + `<button class="back-button" type="button" data-go="#/">← ${t('back')}</button></div>`
+            + `<button class="back-button" type="button" data-back="#/">← ${t('back')}</button></div>`
             + emptyState('notFound', 'notFoundLead');
     }
 
     const normalize = value => String(value || '')
+        .normalize('NFC')
         .toLowerCase()
         .replace(/ё/g, 'е')
         .replace(/[әӘ]/g, 'а').replace(/[іІ]/g, 'и').replace(/[ңҢ]/g, 'н').replace(/[ғҒ]/g, 'г')
@@ -871,7 +979,7 @@
         const scope = scopeEntry ? allDocs(scopeEntry.node) : allVisible();
         const needle = normalize(query);
         const words = needle.split(' ').filter(Boolean);
-        const items = scope.filter(doc => {
+        const items = !words.length ? [] : scope.filter(doc => {
             const haystack = normalize(`${doc.title?.ru || ''} ${doc.title?.kk || ''} ${title(docIndex.get(doc.id)?.cat)}`);
             return words.every(word => haystack.includes(word));
         });
@@ -915,8 +1023,8 @@
         return `<span class="chip ${cls}" data-chip="${esc(doc.id)}">${t(key)}</span>`;
     }
 
-    function fileInput(id, extraClass = 'sr-only') {
-        return `<input type="file" class="${extraClass}" data-upload="${esc(id)}" accept="${ACCEPT}">`;
+    function fileInput(id, label) {
+        return `<input type="file" class="sr-only" data-upload="${esc(id)}" accept="${ACCEPT}" aria-label="${esc(label)}">`;
     }
 
     function uploadRow(doc) {
@@ -938,7 +1046,7 @@
         const error = Store.errors.get(doc.id);
         const action = filled
             ? '<span class="doc-arrow" aria-hidden="true">→</span>'
-            : `<label class="row-upload"${busy ? ' hidden' : ''}>${ICON.upload}<span>${t('uploadAction')}</span>${fileInput(doc.id)}</label>`;
+            : `<label class="row-upload"${busy ? ' hidden' : ''}>${ICON.upload}<span>${t('uploadAction')}</span>${fileInput(doc.id, `${t('uploadAction')}: ${title(doc)}`)}</label>`;
         return `<div class="doc-row is-upload is-${state.kind}" data-drop="${esc(doc.id)}">
             <button class="doc-main" type="button" data-go="${hrefDocument(doc.id)}">
                 <span class="file-icon ${iconClass}">${esc(label)}</span>
@@ -949,8 +1057,15 @@
         </div>`;
     }
 
+    /* «Назад» ведёт туда, откуда открыли документ (поиск или раздел, где он лежит),
+       иначе — в его раздел. */
     function backHrefForDocument(entry) {
-        if (lastListHash && lastListHash !== '#/' && lastListHash !== location.hash) return lastListHash;
+        const from = history.state?.from;
+        if (from) {
+            const origin = parseHash(from);
+            if (origin.type === 'search') return from;
+            if (origin.type === 'category' && entry.path.some(node => node.id === origin.id)) return from;
+        }
         return hrefCategory(entry.cat.id);
     }
 
@@ -962,7 +1077,7 @@
         entry.path.forEach(node => crumbs.push({label: title(node), href: hrefCategory(node.id)}));
         crumbs.push({label: t('document')});
         const toolbar = `<div class="view-toolbar"><div class="view-title">${breadcrumb(crumbs)}<h3>${esc(title(doc))}</h3></div>`
-            + `<button class="back-button" type="button" data-go="${esc(backHrefForDocument(entry))}">← ${t('back')}</button></div>`;
+            + `<button class="back-button" type="button" data-back="${esc(backHrefForDocument(entry))}">← ${t('back')}</button></div>`;
 
         if (UPLOAD) {
             const state = slotState(id);
@@ -976,8 +1091,8 @@
         const buttons = [];
         if (UPLOAD) buttons.push(statusChip(doc) + (source.date ? `<small class="sr-only">${esc(source.date)}</small>` : ''));
         if (source.kind === 'link') {
-            buttons.push(`<a class="action-button" href="${esc(source.url)}" target="_blank" rel="noopener">${ICON.external}${t('openLink')}</a>`);
-            if (source.download !== source.url) {
+            if (source.url) buttons.push(`<a class="action-button" href="${esc(source.url)}" target="_blank" rel="noopener">${ICON.external}${t('openLink')}</a>`);
+            if (source.download && source.download !== source.url) {
                 buttons.push(`<a class="download-button" href="${esc(source.download)}" target="_blank" rel="noopener">${ICON.download}${t('download')}</a>`);
             }
         } else if (source.kind === 'remote') {
@@ -989,9 +1104,9 @@
             const state = slotState(doc.id);
             const busy = Store.busy.has(doc.id);
             if (state.kind === 'local' && Store.canPush) {
-                buttons.push(`<button class="action-button is-primary" type="button" data-action="publish-one" data-id="${esc(doc.id)}"${busy ? ' disabled' : ''}>${ICON.cloud}${t('publishOne')}</button>`);
+                buttons.push(`<button class="action-button is-primary" type="button" data-action="publish-one" data-id="${esc(doc.id)}"${busy || Store.publishing ? ' disabled' : ''}>${ICON.cloud}${t('publishOne')}</button>`);
             }
-            buttons.push(`<label class="action-button"${busy ? ' hidden' : ''}>${ICON.replace}${t('replace')}${fileInput(doc.id)}</label>`);
+            buttons.push(`<label class="action-button"${busy ? ' hidden' : ''}>${ICON.replace}${t('replace')}${fileInput(doc.id, `${t('replace')}: ${title(doc)}`)}</label>`);
             buttons.push(`<button class="action-button is-danger" type="button" data-action="remove" data-id="${esc(doc.id)}"${busy ? ' disabled' : ''}>${ICON.trash}${t(state.kind === 'local' ? 'removeDraft' : 'remove')}</button>`);
         }
         const error = Store.errors.get(doc.id);
@@ -1005,7 +1120,7 @@
         if (source.kind === 'link') {
             preview = source.preview
                 ? `<iframe src="${esc(source.preview)}" title="${frameTitle}" loading="eager" allow="autoplay" referrerpolicy="strict-origin-when-cross-origin"></iframe>`
-                : `<div class="preview-unavailable"><div><strong>${t('unavailable')}</strong><p>${t('linkHint')}</p><div class="viewer-buttons"><a class="download-button" href="${esc(source.url)}" target="_blank" rel="noopener">${ICON.external}${t('openLink')}</a></div></div></div>`;
+                : `<div class="preview-unavailable"><div><strong>${t('unavailable')}</strong><p>${t('linkHint')}</p>${source.url ? `<div class="viewer-buttons"><a class="download-button" href="${esc(source.url)}" target="_blank" rel="noopener">${ICON.external}${t('openLink')}</a></div>` : ''}</div></div>`;
         } else if (source.fclass === 'image') {
             preview = `<img class="document-image" src="${esc(source.url)}" alt="${frameTitle}">`;
         } else if (source.fclass === 'pdf') {
@@ -1050,7 +1165,7 @@
                 <p class="need-label">${t('uploadNeed')}</p>
                 <p class="need">${esc(title(doc))}</p>
                 <p class="drop-text">${t('dropHere')} ${t('or')}</p>
-                <label class="file-button"${busy ? ' hidden' : ''}>${ICON.upload}<span>${t('chooseFile')}</span>${fileInput(id)}</label>
+                <label class="file-button"${busy ? ' hidden' : ''}>${ICON.upload}<span>${t('chooseFile')}</span>${fileInput(id, `${t('chooseFile')}: ${title(doc)}`)}</label>
                 <small>${t('formats')} · ${Store.canPush ? t('maxSize', {mb: MAX_MB}) : t('anySize')}</small>
                 <div class="upload-progress" data-progress-box="${esc(id)}"${busy ? '' : ' hidden'}>
                     ${meter(busy ? Math.round(busy.pct * 100) : 0)}<span>${esc(busy?.label || '')}</span>
@@ -1078,6 +1193,7 @@
         if (remoteCache.size >= 4) {
             const [firstKey] = remoteCache.keys();
             remoteCache.delete(firstKey);
+            revokeUrl(`remote:${firstKey}`);
         }
         remoteCache.set(url, blob);
         return blob;
@@ -1122,14 +1238,13 @@
         el.stats.innerHTML = `
             <div class="stat"><span>${t('categoryLabel')}</span><strong>${countCategories()}</strong><small>${t('categoryNote')}</small></div>
             <div class="stat"><span>${t('uploadedLabel')}</span><strong>${loading ? '…' : progress.done}<em> / ${progress.total}</em></strong>${meter(progress.percent, left === 0)}<small>${local ? t('uploadedNote', {site, local}) : t('uploadedNoteSite')}</small></div>
-            <div class="stat"><span>${t('leftLabel')}</span><strong>${loading ? '…' : left}</strong><small>${left === 0 && !loading ? t('leftNoteDone') : (updated ? t('updatedOn', {date: updated}) : t('notUpdated'))}</small></div>`;
+            <div class="stat"><span>${t('leftLabel')}</span><strong>${loading ? '…' : left}</strong><small>${left === 0 && !loading ? t('leftNoteDone') : (updated ? t('updatedOn', {date: esc(updated)}) : t('notUpdated'))}</small></div>`;
     }
 
+    let lastNoticesHtml = null;
+
     function renderNotices() {
-        if (!UPLOAD) {
-            el.notices.innerHTML = '';
-            return;
-        }
+        if (!UPLOAD) return;
         const notices = [];
         if (Store.loadError) {
             notices.push(`<div class="notice is-error"><span class="notice-text">${t('manifestFail')}</span><span class="notice-actions"><button class="action-button" type="button" data-action="reload">${ICON.replace}${t('reload')}</button></span></div>`);
@@ -1138,12 +1253,16 @@
         if (drafts) {
             const label = `${Store.drafts.size} ${docWord(Store.drafts.size)}${Store.settingsDraft ? ` + ${t('schoolInfo').toLowerCase()}` : ''}`;
             notices.push(`<div class="notice is-info"><span class="notice-text">${esc(t('draftsNotice', {n: label}))}</span><span class="notice-actions">`
-                + `<button class="action-button is-primary" type="button" data-action="publish-drafts">${ICON.cloud}${t('publishDrafts')}</button>`
+                + `<button class="action-button is-primary" type="button" data-action="publish-drafts"${Store.publishing ? ' disabled' : ''}>${ICON.cloud}${t('publishDrafts')}</button>`
                 + `<button class="action-button" type="button" data-action="zip">${ICON.archive}${t('downloadZip')}</button></span></div>`);
         } else if (!Store.canPush && currentRoute.type !== 'document') {
             notices.push(`<div class="notice"><span class="notice-text">${t('loginNotice')}</span><span class="notice-actions"><button class="action-button is-primary" type="button" data-action="login">${ICON.user}${t('login')}</button></span></div>`);
         }
-        el.notices.innerHTML = notices.join('');
+        const html = notices.join('');
+        if (html !== lastNoticesHtml) {
+            lastNoticesHtml = html;
+            el.notices.innerHTML = html;
+        }
     }
 
     function renderBadge() {
@@ -1211,7 +1330,8 @@
     function renderChrome() {
         document.documentElement.lang = lang;
         const siteName = settingValue('site_name');
-        document.title = siteName ? `${t('pageTitle')} — ${siteName}` : t('pageTitle');
+        const pageTitle = t(UPLOAD ? 'pageTitleUpload' : 'pageTitle');
+        document.title = siteName ? `${pageTitle} — ${siteName}` : pageTitle;
         $('#mainTitle').textContent = t('mainTitle');
         $('#mainLead').textContent = t(UPLOAD ? 'mainLeadUpload' : 'mainLead');
         $('#headerHomeLabel').textContent = t('home');
@@ -1278,9 +1398,19 @@
     /* ───────────── События ───────────── */
 
     function bindEvents() {
-        window.addEventListener('hashchange', () => render({scroll: true}));
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        window.addEventListener('popstate', () => render({scroll: true, traversal: true}));
+        window.addEventListener('hashchange', () => {
+            if (currentHash() !== renderedHash) render({scroll: true, traversal: true});
+        });
 
         document.addEventListener('click', event => {
+            const back = event.target.closest('[data-back]');
+            if (back) {
+                event.preventDefault();
+                goBack(back.dataset.back);
+                return;
+            }
             const go = event.target.closest('[data-go]');
             if (go && !event.target.closest('label, input, a[href]')) {
                 event.preventDefault();
@@ -1314,7 +1444,7 @@
                 if (new URLSearchParams(location.search).has('lang')) {
                     const url = new URL(location.href);
                     url.searchParams.delete('lang');
-                    history.replaceState(null, '', url.pathname + url.search + url.hash);
+                    history.replaceState(history.state, '', url.pathname + url.search + url.hash);
                 }
                 refreshAll();
             });
@@ -1332,7 +1462,7 @@
             }
         });
         el.select.addEventListener('change', () => {
-            if (el.search.value.trim()) {
+            if (normalize(el.search.value)) {
                 runSearch();
                 return;
             }
@@ -1388,18 +1518,25 @@
     function runSearch() {
         const query = el.search.value.trim();
         const cat = el.select.value || 'all';
-        if (!query) {
-            if (currentRoute.type === 'search') navigate(cat === 'all' ? '#/' : hrefCategory(cat), {replace: true});
+        if (!normalize(query)) {
+            if (currentRoute.type === 'search') leaveSearch(cat, Boolean(query));
             return;
         }
         navigate(hrefSearch(cat, query), {replace: currentRoute.type === 'search'});
+    }
+
+    /* Выход из поиска: если поиск начали с этой же страницы — шаг назад по истории. */
+    function leaveSearch(cat = el.select.value || 'all', stillTyping = false) {
+        const target = cat === 'all' ? '#/' : hrefCategory(cat);
+        if (!stillTyping && history.state?.from === target) history.back();
+        else navigate(target, {replace: true});
     }
 
     function handleAction(name, id, node) {
         switch (name) {
             case 'clear-search':
                 el.search.value = '';
-                navigate(el.select.value === 'all' ? '#/' : hrefCategory(el.select.value));
+                leaveSearch();
                 break;
             case 'login':
                 openLoginDialog();
@@ -1464,14 +1601,21 @@
         if (!response.ok) {
             let message = '';
             try { message = (await response.json()).message; } catch (_) { /* пустой ответ */ }
-            throw apiError(response.status, message);
+            const error = apiError(response.status, message);
+            error.rateLimited = isRateLimited(response.status, message, response.headers.get('x-ratelimit-remaining'), response.headers.get('retry-after'));
+            throw error;
         }
         if (response.status === 204) return null;
         return raw ? response.text() : response.json();
     }
 
+    function isRateLimited(status, message, remaining, retryAfter) {
+        return (status === 403 || status === 429) && (/rate limit/i.test(message || '') || remaining === '0' || Boolean(retryAfter));
+    }
+
     function humanError(error) {
         const message = String(error?.message || '');
+        if (error?.rateLimited) return t('errRateLimit');
         if (/too large/i.test(message) || error?.status === 413) return t('errTooLarge');
         if (error?.status === 401) return t('errAuth');
         if (error?.status === 403 || error?.status === 404) return t('errForbidden');
@@ -1491,8 +1635,9 @@
             } else {
                 try {
                     const response = await fetch(`${rawUrl('manifest.json')}?t=${Date.now()}`, {cache: 'no-store'});
-                    if (!response.ok) throw apiError(response.status);
-                    Store.manifest = normalizeManifest(await response.json());
+                    if (response.status === 404) Store.manifest = emptyManifest();
+                    else if (!response.ok) throw apiError(response.status);
+                    else Store.manifest = normalizeManifest(await response.json());
                     Store.loadError = null;
                 } catch (fallbackError) {
                     Store.loadError = fallbackError;
@@ -1592,7 +1737,9 @@
                 }
                 let message = '';
                 try { message = JSON.parse(xhr.responseText).message; } catch (_) { /* не JSON */ }
-                reject(apiError(xhr.status, message));
+                const error = apiError(xhr.status, message);
+                error.rateLimited = isRateLimited(xhr.status, message, xhr.getResponseHeader('x-ratelimit-remaining'), xhr.getResponseHeader('retry-after'));
+                reject(error);
             };
             xhr.onerror = () => reject(apiError(0, t('errNetwork')));
             xhr.send(JSON.stringify({content, encoding: 'base64'}));
@@ -1654,7 +1801,7 @@
         const first = !Store.busy.has(id);
         Store.busy.set(id, {pct, label});
         if (first) {
-            rerender();
+            refreshSlot(id);
             return;
         }
         const percent = `${Math.round(pct * 100)}%`;
@@ -1670,6 +1817,25 @@
 
     function clearBusy(id) {
         Store.busy.delete(id);
+    }
+
+    /* Перерисовать только то, что зависит от слота: если открыт другой документ,
+       не трогаем его (иначе сбросится ввод ссылки и просмотр PDF). */
+    function refreshSlot(id) {
+        if (currentRoute.type === 'document' && currentRoute.id !== id) {
+            renderStats();
+            renderNotices();
+        } else {
+            rerender();
+        }
+    }
+
+    /* После публикации черновик этого документа больше не нужен. */
+    async function dropDraft(id) {
+        if (!Store.drafts.has(id)) return;
+        Store.drafts.delete(id);
+        revokeUrl(`draft:${id}`);
+        await Drafts.remove(id).catch(() => {});
     }
 
     function enqueue(task) {
@@ -1743,6 +1909,7 @@
                 };
                 return {add: [{path, sha}], remove: old?.path && old.path !== path ? [old.path] : []};
             });
+            await dropDraft(id);
             Store.errors.delete(id);
             toast(t('uploadedToast', {title}), 'ok');
             return true;
@@ -1755,7 +1922,7 @@
         } finally {
             progressToast.close();
             clearBusy(id);
-            rerender();
+            refreshSlot(id);
         }
     }
 
@@ -1782,6 +1949,7 @@
                 manifest.files[id] = {link, uploaded_at: new Date().toISOString(), by: Store.user || null};
                 return {remove: old?.path ? [old.path] : []};
             });
+            await dropDraft(id);
             Store.errors.delete(id);
             toast(t('linkSaved', {title: docTitle(id)}), 'ok');
             return true;
@@ -1793,7 +1961,7 @@
             throw error;
         } finally {
             clearBusy(id);
-            rerender();
+            refreshSlot(id);
         }
     }
 
@@ -1802,8 +1970,7 @@
         const name = docTitle(id);
         if (state.kind === 'local') {
             if (!confirm(t('confirmRemoveDraft', {title: name}))) return;
-            try { await Drafts.remove(id); } catch (_) { /* уже удалён */ }
-            Store.drafts.delete(id);
+            await dropDraft(id);
             toast(t('removedToast'), 'ok');
             rerender();
             return;
@@ -1829,7 +1996,7 @@
                 if (error.status === 401) logout(true);
             } finally {
                 clearBusy(id);
-                rerender();
+                refreshSlot(id);
             }
         });
     }
@@ -1839,6 +2006,18 @@
             openLoginDialog();
             return;
         }
+        if (Store.publishing) return;
+        Store.publishing = true;
+        renderNotices();
+        try {
+            await publishDraftRecords(onlyIds);
+        } finally {
+            Store.publishing = false;
+            refreshAll();
+        }
+    }
+
+    async function publishDraftRecords(onlyIds) {
         const records = [...Store.drafts.values()].filter(record => !onlyIds || onlyIds.includes(record.id));
         const settingsRecord = !onlyIds ? Store.settingsDraft : null;
         let published = 0;
@@ -1849,6 +2028,9 @@
         for (const record of records) {
             index++;
             summary.update(t('publishProgress', {i: index, n: total}), (index - 1) / total);
+            // Черновик заменили или уже опубликовали за время публикации — пропускаем.
+            if (Store.drafts.get(record.id) !== record || Store.busy.has(record.id)) continue;
+            if (!Store.canPush) break;
             if (record.kind === 'file' && record.size > MAX_BYTES) {
                 skipped++;
                 Store.errors.set(record.id, t('tooLarge', {size: formatSize(record.size), mb: MAX_MB}));
@@ -1862,14 +2044,13 @@
                     setBusy(record.id, 0, t('statusQueued'));
                     await enqueue(() => publishFile(record.id, record.blob, record.name));
                 }
-                await Drafts.remove(record.id).catch(() => {});
-                Store.drafts.delete(record.id);
+                await dropDraft(record.id);
                 published++;
             } catch (error) {
-                if (error.status === 401) break;
+                if (error.status === 401 || error.rateLimited) break;
             }
         }
-        if (settingsRecord) {
+        if (settingsRecord && Store.canPush && Store.settingsDraft === settingsRecord) {
             index++;
             summary.update(t('publishProgress', {i: index, n: total}), (index - 1) / total);
             try {
@@ -1880,12 +2061,14 @@
                 await Drafts.remove(SETTINGS_ID).catch(() => {});
                 Store.settingsDraft = null;
                 published++;
-            } catch (_) { /* сообщение уже показано */ }
+            } catch (error) {
+                toast(t('uploadFail', {err: humanError(error)}), 'error');
+                if (error.status === 401) logout(true);
+            }
         }
         summary.close();
         toast(t('publishDone', {n: published}), 'ok');
         if (skipped) toast(t('publishSkipped', {n: skipped, mb: MAX_MB}), 'error');
-        refreshAll();
     }
 
     async function downloadRemote(id, button) {
@@ -1924,9 +2107,21 @@
         return table;
     })();
 
-    function crc32(bytes) {
+    async function crc32(blob) {
         let crc = 0xFFFFFFFF;
-        for (let i = 0; i < bytes.length; i++) crc = CRC_TABLE[(crc ^ bytes[i]) & 0xFF] ^ (crc >>> 8);
+        const update = bytes => {
+            for (let i = 0; i < bytes.length; i++) crc = CRC_TABLE[(crc ^ bytes[i]) & 0xFF] ^ (crc >>> 8);
+        };
+        if (typeof blob.stream === 'function') {
+            const reader = blob.stream().getReader();
+            for (;;) {
+                const {done, value} = await reader.read();
+                if (done) break;
+                update(value);
+            }
+        } else {
+            update(new Uint8Array(await blob.arrayBuffer()));
+        }
         return (crc ^ 0xFFFFFFFF) >>> 0;
     }
 
@@ -1935,13 +2130,15 @@
         const now = new Date();
         const time = (now.getHours() << 11) | (now.getMinutes() << 5) | Math.floor(now.getSeconds() / 2);
         const date = ((now.getFullYear() - 1980) << 9) | ((now.getMonth() + 1) << 5) | now.getDate();
+        const total = files.reduce((sum, file) => sum + 76 + 2 * encoder.encode(file.name).length + (file.blob?.size || 0), 22);
+        if (total > 0xFFFFFFFF) throw new Error(t('zipTooLarge'));
         const parts = [];
         const central = [];
         let offset = 0;
         for (const file of files) {
             const name = encoder.encode(file.name);
             const blob = file.blob instanceof Blob ? file.blob : new Blob([file.blob]);
-            const crc = crc32(new Uint8Array(await blob.arrayBuffer()));
+            const crc = await crc32(blob);
             const size = blob.size;
             const local = new DataView(new ArrayBuffer(30));
             local.setUint32(0, 0x04034b50, true);
@@ -1986,11 +2183,14 @@
         const progress = toast(t('zipBuilding'), '', {sticky: true});
         try {
             const files = [];
-            const rows = [['Раздел', 'Документ', 'Статус', 'Файл / ссылка']];
+            const rows = [[t('zipColSection'), t('zipColDocument'), t('zipColStatus'), t('zipColFile')]];
             const links = [];
             catalogs.flatMap(allDocs).forEach(doc => {
                 const entry = docIndex.get(doc.id);
-                const folder = entry.path.map(node => safeName(node.title.ru)).join('/');
+                // У подразделов нет номера в названии — добавляем порядковый номер, как на сайте.
+                const folder = entry.path.map((node, depth) => (depth === 0
+                    ? safeName(node.title.ru)
+                    : `${String(entry.path[depth - 1].children.indexOf(node) + 1).padStart(2, '0')}. ${safeName(node.title.ru)}`)).join('/');
                 const state = slotState(doc.id);
                 const number = String(entry.order).padStart(2, '0');
                 let target = '';
@@ -2003,17 +2203,21 @@
                 } else if (state.kind === 'published') {
                     target = rawUrl(state.record.path);
                 }
-                const status = {local: 'В браузере', published: 'На сайте', missing: 'Нужно загрузить', checking: '—'}[state.kind];
-                rows.push([entry.path.map(node => node.title.ru).join(' / '), doc.title.ru, status, target]);
+                const status = {local: t('statusLocal'), published: t('statusPublished'), missing: t('statusMissing'), checking: '—'}[state.kind];
+                rows.push([entry.path.map(node => title(node)).join(' / '), title(doc), status, target]);
             });
-            const csv = `﻿${rows.map(row => row.map(cell => `"${String(cell).replace(/"/g, '""')}"`).join(';')).join('\r\n')}`;
-            files.push({name: 'Список документов.csv', blob: new Blob([csv], {type: 'text/csv'})});
-            if (links.length) files.push({name: 'Ссылки.txt', blob: new Blob([links.join('\n')], {type: 'text/plain'})});
+            const cell = value => {
+                const text = String(value);
+                return `"${(/^[=+\-@\t\r]/.test(text) ? `'${text}` : text).replace(/"/g, '""')}"`;
+            };
+            const csv = `\ufeff${rows.map(row => row.map(cell).join(';')).join('\r\n')}`;
+            files.push({name: `${t('zipListName')}.csv`, blob: new Blob([csv], {type: 'text/csv'})});
+            if (links.length) files.push({name: `${t('zipLinksName')}.txt`, blob: new Blob([links.join('\n')], {type: 'text/plain'})});
             if (Store.settingsDraft) {
-                files.push({name: '_Данные организации/данные.json', blob: new Blob([JSON.stringify(Store.settingsDraft.values || {}, null, 2)], {type: 'application/json'})});
+                files.push({name: `${t('zipSettingsFolder')}/${t('zipSettingsFile')}.json`, blob: new Blob([JSON.stringify(Store.settingsDraft.values || {}, null, 2)], {type: 'application/json'})});
                 ['logo', 'director_photo'].forEach(key => {
                     const blob = Store.settingsDraft[`${key}_blob`];
-                    if (blob) files.push({name: `_Данные организации/${key}.${extOf(blob.name) || 'jpg'}`, blob});
+                    if (blob) files.push({name: `${t('zipSettingsFolder')}/${key}.${extOf(blob.name) || 'jpg'}`, blob});
                 });
             }
             const zip = await makeZip(files);
@@ -2070,6 +2274,7 @@
             node = document.createElement('dialog');
             node.id = id;
             node.className = 'modal';
+            node.setAttribute('aria-labelledby', `${id}-title`);
             document.body.appendChild(node);
             node.addEventListener('click', event => {
                 if (event.target === node) node.close();
@@ -2083,11 +2288,15 @@
     function openLoginDialog() {
         if (Store.canPush) {
             const node = dialog('accountDialog', `<div class="modal-form">
-                <div class="modal-head"><div><h3>${t('account')}</h3><p>${esc(t('accountLead', {repo: repoName}))}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
+                <div class="modal-head"><div><h3 id="accountDialog-title">${t('account')}</h3><p>${esc(t('accountLead', {repo: repoName}))}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
                 <div class="modal-body"><div class="account-card">${ICON.check}<div><strong>${esc(t('loginOk', {user: Store.user || 'GitHub'}))}</strong><span>${esc(repoName)}</span></div></div></div>
                 <div class="modal-foot"><button class="action-button is-danger" type="button" id="logoutButton">${t('logout')}</button><button class="action-button is-primary" type="button" data-close>${t('close')}</button></div>
             </div>`);
             $('#logoutButton', node).addEventListener('click', () => {
+                if (Store.busy.size || Store.publishing) {
+                    toast(t('errBusy'), 'error');
+                    return;
+                }
                 node.close();
                 logout();
             });
@@ -2097,10 +2306,10 @@
         const steps = ['tokenStep1', 'tokenStep2', 'tokenStep3', 'tokenStep4']
             .map(key => `<li>${t(key, {repo: esc(repoName)})}</li>`).join('');
         const node = dialog('loginDialog', `<form class="modal-form" id="loginForm" method="dialog">
-            <div class="modal-head"><div><h3>${t('loginTitle')}</h3><p>${t('loginLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
+            <div class="modal-head"><div><h3 id="loginDialog-title">${t('loginTitle')}</h3><p>${t('loginLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
             <div class="modal-body">
                 <div class="field"><label for="tokenInput">${t('tokenLabel')}</label><input id="tokenInput" type="password" autocomplete="off" spellcheck="false" placeholder="${t('tokenPlaceholder')}" required></div>
-                <label class="field-check"><input type="checkbox" id="rememberToken" checked> ${t('remember')}</label>
+                <label class="field-check"><input type="checkbox" id="rememberToken"> ${t('remember')}</label>
                 <details class="hint"><summary>${t('howToken')}</summary><ol class="steps">${steps}</ol></details>
                 <p class="form-message" id="loginMessage" role="status"></p>
             </div>
@@ -2176,7 +2385,7 @@
             </div></div>`;
         };
         const node = dialog('schoolDialog', `<form class="modal-form" id="schoolForm" method="dialog">
-            <div class="modal-head"><div><h3>${t('schoolInfo')}</h3><p>${t('schoolInfoLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
+            <div class="modal-head"><div><h3 id="schoolDialog-title">${t('schoolInfo')}</h3><p>${t('schoolInfoLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
             <div class="modal-body">
                 <div class="field-grid">${imageField('logo', 'fLogo')}${imageField('director_photo', 'fPhoto')}</div>
                 ${fields}
@@ -2218,7 +2427,15 @@
             submit.disabled = true;
             try {
                 if (Store.canPush) {
-                    await enqueue(() => publishSettings(values, images));
+                    const draft = Store.settingsDraft || {};
+                    await enqueue(() => publishSettings(values, {
+                        logo: images.logo || draft.logo_blob || null,
+                        director_photo: images.director_photo || draft.director_photo_blob || null
+                    }));
+                    if (Store.settingsDraft) {
+                        Store.settingsDraft = null;
+                        await Drafts.remove(SETTINGS_ID).catch(() => {});
+                    }
                     toast(t('settingsSaved'), 'ok');
                 } else {
                     const previous = Store.settingsDraft || {};
