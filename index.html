@@ -8,11 +8,11 @@
     <meta name="theme-color" content="#087e87">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap&subset=cyrillic-ext" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23087e87'/%3E%3Cpath d='M17 18h23a7 7 0 0 1 7 7v24H24a7 7 0 0 1-7-7V18Z' fill='%23fff'/%3E%3Cpath d='M24 18h23v31H24a7 7 0 0 0-7 7V25a7 7 0 0 1 7-7Z' fill='%23ff9b20'/%3E%3Cpath d='M30 27h10M30 34h10' stroke='%23087e87' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="assets/style.css?v=1">
+    <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
-<body class="mode-upload">
+<body class="mode-upload" data-route="home">
 <aside class="sidebar" id="sidebar" aria-label="Информация об организации">
     <div class="brand">
         <div class="brand-logo" id="brandLogo"></div>
@@ -78,14 +78,14 @@
                 <button type="button" data-lang="kk">ҚАЗ</button>
                 <button type="button" data-lang="ru">РУС</button>
             </div>
-            <div class="badge" id="statusBadge"><i></i><span id="statusBadgeText"></span></div>
+            <button class="badge" id="statusBadge" type="button" data-action="login"><i></i><span id="statusBadgeText"></span></button>
         </div>
     </header>
 
     <section class="search-panel" id="searchPanel">
         <label class="searchbox">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-            <input id="search" type="search" autocomplete="off">
+            <input id="search" type="search" autocomplete="off" enterkeyhint="search">
         </label>
         <select id="categorySelect" class="category-select"></select>
     </section>
@@ -107,8 +107,8 @@
 
 <div class="toasts" id="toasts" aria-live="polite"></div>
 
-<script src="assets/config.js?v=1"></script>
-<script src="assets/structure.js?v=1"></script>
-<script src="assets/app.js?v=1"></script>
+<script src="assets/config.js?v=2"></script>
+<script src="assets/structure.js?v=2"></script>
+<script src="assets/app.js?v=2"></script>
 </body>
 </html>

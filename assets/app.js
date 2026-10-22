@@ -28,7 +28,7 @@
             pageTitleUpload: 'Загрузка документов аттестации',
             mainTitle: 'Документы аттестации',
             mainLead: 'Выберите категорию или найдите документ по названию.',
-            mainLeadUpload: 'Загрузите документы по списку — в каждом разделе указано, какой файл нужен.',
+            mainLeadUpload: 'Загрузите документы по списку — в каждом разделе видно, каких файлов не хватает.',
             home: 'Главная',
             languageSwitch: 'Выбор языка',
             sidebarLabel: 'Информация об организации',
@@ -46,9 +46,33 @@
             phAddress: 'Адрес организации',
             phPhone: 'Телефон',
             phEmail: 'Электронная почта',
-            categoryLabel: 'Категорий',
-            categoryNote: 'Все разделы открыты',
-            documentLabel: 'Документов',
+            sectionsLabel: 'Категории',
+            sectionsNoteSub: 'и {n} {word}',
+            sectionsNote: 'загружены полностью',
+            sectionsNoteDone: 'Все категории готовы',
+            notPublished: 'Документы ещё не опубликованы',
+            nextLabel: 'Следующий',
+            nextDoc: 'Следующий документ',
+            sectionDocs: 'Документы раздела',
+            leftShort: 'осталось {n}',
+            inBrowserShort: 'в браузере: {n}',
+            fmtDrive: 'Диск',
+            fmtLink: 'Ссылка',
+            sectionDone: 'Всё загружено',
+            driveLink: 'ссылка на Google Диск',
+            webLink: 'ссылка',
+            emptySiteTitle: 'На сайте пока нет документов',
+            emptySiteLead: 'Поиск заработает, когда документы будут опубликованы.',
+            linkSummary: 'Файл больше {mb} МБ? Добавьте ссылку на Google Диск',
+            tooLargeDraft: 'Файл сохранён в браузере, но он больше {mb} МБ ({size}) — на сайте его не опубликовать. Сожмите PDF или добавьте ссылку на Google Диск.',
+            badgeLogin: 'Войти для публикации',
+            gotIt: 'Понятно',
+            loginPublish: 'Войти и опубликовать',
+            draftsRisk: 'Опубликуйте или скачайте архив, чтобы не потерять файлы.',
+            errRead: 'не удалось прочитать файл — выберите его ещё раз',
+            errServer: 'GitHub вернул ошибку {code} — попробуйте ещё раз',
+            errUnknown: 'неизвестная ошибка — попробуйте ещё раз',
+            documentLabel: 'Документы',
             documentNote: 'PDF, Word, Excel и изображения',
             documentNoteEmpty: 'Пока не добавлены',
             lastUpdate: 'Последнее обновление',
@@ -57,7 +81,7 @@
             categories: 'Категории',
             homeTitle: 'Категории документов',
             homeLead: 'Откройте папку, чтобы увидеть документы и подразделы',
-            homeLeadUpload: 'Откройте папку, чтобы загрузить нужные документы',
+            homeLeadUpload: 'Откройте папку и загрузите недостающие документы',
             showAll: 'Показать все',
             open: 'открыть',
             sectionLead: '{n} {word} в разделе',
@@ -66,7 +90,7 @@
             searchTitle: 'Результаты поиска',
             found: 'Найдено документов',
             emptyTitle: 'Документов пока нет',
-            emptyLead: 'Материалы появятся после добавления.',
+            emptyLead: 'Документы этого раздела готовятся и скоро появятся здесь.',
             noResults: 'Ничего не найдено',
             noResultsLead: 'Попробуйте другой запрос или выберите «Все категории».',
             notFound: 'Страница не найдена',
@@ -75,7 +99,7 @@
             download: 'Скачать документ',
             openLink: 'Открыть ссылку',
             unavailable: 'Предварительный просмотр недоступен',
-            unavailableLead: 'Скачайте документ, чтобы открыть его на компьютере.',
+            unavailableLead: 'Скачайте документ, чтобы открыть его на устройстве.',
             overview: 'Обзор документа',
             pages: 'Страницы / листы',
             pagesHint: 'Количество показано в панели просмотрщика',
@@ -92,13 +116,13 @@
             updatedOn: 'Обновлено: {date}',
             notUpdated: 'Ещё ничего не загружено',
             uploadedShort: 'загружено',
-            statusMissing: 'Нужно загрузить',
+            statusMissing: 'Не загружен',
             statusPublished: 'Загружен',
             statusLocal: 'В браузере',
             statusChecking: 'Проверка…',
             statusQueued: 'В очереди…',
             expected: 'нужен файл',
-            inBrowser: 'сохранён только в этом браузере',
+            inBrowser: 'сохранено только в этом браузере',
             uploadAction: 'Загрузить',
             uploadTitle: 'Загрузите документ',
             uploadNeed: 'Для этого раздела нужен документ:',
@@ -108,25 +132,25 @@
             formats: 'PDF, Word, Excel, PowerPoint или изображение',
             maxSize: 'до {mb} МБ',
             anySize: 'черновик в браузере — без ограничения размера',
-            linkLabel: 'Файл больше {mb} МБ? Загрузите его на Google Диск (доступ «Все, у кого есть ссылка») и вставьте ссылку:',
+            linkLabel: 'Загрузите файл на Google Диск, откройте доступ «Все, у кого есть ссылка» и вставьте ссылку:',
             linkPlaceholder: 'https://drive.google.com/file/d/…',
             saveLink: 'Сохранить ссылку',
             badLink: 'Вставьте полную ссылку, которая начинается с https://',
             replace: 'Заменить',
             remove: 'Удалить',
-            removeDraft: 'Удалить черновик',
+            removeDraft: 'Удалить из браузера',
             publishOne: 'Опубликовать',
             confirmRemove: 'Удалить документ «{title}»?',
-            confirmRemoveDraft: 'Удалить черновик «{title}» из этого браузера?',
+            confirmRemoveDraft: 'Удалить «{title}» из этого браузера?',
             tooLarge: 'Файл весит {size} — это больше {mb} МБ. Сожмите PDF или загрузите файл на Google Диск и вставьте ссылку ниже.',
             badType: 'Этот формат не подходит. Нужен PDF, Word, Excel, PowerPoint или изображение.',
             badImage: 'Нужна картинка JPG, PNG или WEBP до 5 МБ.',
             preparing: 'Подготовка файла…',
             uploading: 'Загрузка «{title}»… {pct}%',
             saving: 'Сохранение на сайте…',
-            uploadedToast: 'Документ «{title}» загружен на сайт',
+            uploadedToast: 'Опубликовано на сайте: «{title}»',
             linkSaved: 'Ссылка для «{title}» сохранена',
-            savedLocal: '«{title}» сохранён в этом браузере. Войдите, чтобы опубликовать его на сайте.',
+            savedLocal: 'Сохранено в этом браузере: «{title}»',
             removedToast: 'Документ удалён',
             uploadFail: 'Не удалось сохранить: {err}',
             whereSite: 'Вы вошли как {user}: файл сразу появится на сайте для всех посетителей.',
@@ -135,7 +159,7 @@
             login: 'Войти',
             logout: 'Выйти',
             loginTitle: 'Вход для загрузки документов',
-            loginLead: 'Нужен ключ доступа GitHub к репозиторию сайта. Ключ хранится только в вашем браузере.',
+            loginLead: 'Нужен ключ доступа GitHub к репозиторию сайта. Ключ хранится только в вашем браузере. Если ключа нет, попросите его у ответственного за сайт.',
             tokenLabel: 'Ключ доступа (token)',
             tokenPlaceholder: 'github_pat_…',
             remember: 'Запомнить на этом устройстве',
@@ -151,8 +175,8 @@
             accountLead: 'Загрузки сохраняются в репозиторий {repo}.',
             badgeOnline: 'Загрузка на сайт: {user}',
             badgeOffline: 'Вход не выполнен',
-            loginNotice: 'Документы увидят все посетители после входа с ключом доступа. Без входа файлы сохраняются только в этом браузере.',
-            draftsNotice: '{n} — сохранено только в этом браузере.',
+            loginNotice: 'Можно загружать и без входа: файлы сохранятся в этом браузере, их можно скачать архивом ZIP. Чтобы документы увидели все, войдите с ключом доступа.',
+            draftsNotice: 'Сохранено только в этом браузере: {what} — на сайте пока не видно.',
             publishDrafts: 'Опубликовать на сайте',
             downloadZip: 'Скачать архив ZIP',
             zipBuilding: 'Собираем архив…',
@@ -204,7 +228,7 @@
             pageTitleUpload: 'Аттестаттау құжаттарын жүктеу',
             mainTitle: 'Аттестаттау құжаттары',
             mainLead: 'Санатты таңдаңыз немесе құжатты атауы бойынша табыңыз.',
-            mainLeadUpload: 'Құжаттарды тізім бойынша жүктеңіз — әр бөлімде қандай файл керек екені көрсетілген.',
+            mainLeadUpload: 'Құжаттарды тізім бойынша жүктеп салыңыз — қай файл жетіспейтіні әр бөлімде көрсетілген.',
             home: 'Басты бет',
             languageSwitch: 'Тілді таңдау',
             sidebarLabel: 'Ұйым туралы ақпарат',
@@ -222,8 +246,32 @@
             phAddress: 'Ұйымның мекенжайы',
             phPhone: 'Телефон',
             phEmail: 'Электрондық пошта',
-            categoryLabel: 'Санаттар',
-            categoryNote: 'Барлық бөлім ашық',
+            sectionsLabel: 'Санаттар',
+            sectionsNoteSub: 'және {n} {word}',
+            sectionsNote: 'толық жүктелді',
+            sectionsNoteDone: 'Барлық санат дайын',
+            notPublished: 'Құжаттар әлі жарияланбаған',
+            nextLabel: 'Келесі',
+            nextDoc: 'Келесі құжат',
+            sectionDocs: 'Бөлім құжаттары',
+            leftShort: '{n} қалды',
+            inBrowserShort: 'браузерде: {n}',
+            fmtDrive: 'Диск',
+            fmtLink: 'Сілтеме',
+            sectionDone: 'Бәрі жүктелді',
+            driveLink: 'Google Диск сілтемесі',
+            webLink: 'сілтеме',
+            emptySiteTitle: 'Сайтта әзірге құжат жоқ',
+            emptySiteLead: 'Құжаттар жарияланғанда, іздеу жұмыс істейді.',
+            linkSummary: 'Файл {mb} МБ-тан үлкен бе? Google Диск сілтемесін қосыңыз',
+            tooLargeDraft: 'Файл браузерде сақталды, бірақ ол {mb} МБ-тан үлкен ({size}) — оны сайтта жариялау мүмкін емес. PDF-ті қысыңыз немесе Google Диск сілтемесін қосыңыз.',
+            badgeLogin: 'Жариялау үшін кіру',
+            gotIt: 'Түсінікті',
+            loginPublish: 'Кіру және жариялау',
+            draftsRisk: 'Файлдарды жоғалтып алмау үшін жариялаңыз немесе мұрағатты жүктеп алыңыз.',
+            errRead: 'файлды оқу мүмкін болмады — оны қайта таңдаңыз',
+            errServer: 'GitHub {code} қатесін қайтарды — қайталап көріңіз',
+            errUnknown: 'белгісіз қате — қайталап көріңіз',
             documentLabel: 'Құжаттар',
             documentNote: 'PDF, Word, Excel және суреттер',
             documentNoteEmpty: 'Әзірге қосылмаған',
@@ -233,7 +281,7 @@
             categories: 'Санаттар',
             homeTitle: 'Құжат санаттары',
             homeLead: 'Құжаттар мен ішкі бөлімдерді көру үшін қалтаны ашыңыз',
-            homeLeadUpload: 'Қажетті құжаттарды жүктеу үшін қалтаны ашыңыз',
+            homeLeadUpload: 'Қалтаны ашып, жетіспейтін құжаттарды жүктеп салыңыз',
             showAll: 'Барлығын көрсету',
             open: 'ашу',
             sectionLead: 'Бөлімде {n} {word}',
@@ -242,7 +290,7 @@
             searchTitle: 'Іздеу нәтижелері',
             found: 'Табылған құжаттар',
             emptyTitle: 'Құжаттар әзірге жоқ',
-            emptyLead: 'Материалдар қосылғаннан кейін пайда болады.',
+            emptyLead: 'Бұл бөлімнің құжаттары дайындалып жатыр, жақында осында пайда болады.',
             noResults: 'Ештеңе табылмады',
             noResultsLead: 'Басқа сұрау жазып көріңіз немесе «Барлық санаттарды» таңдаңыз.',
             notFound: 'Бет табылмады',
@@ -251,7 +299,7 @@
             download: 'Құжатты жүктеп алу',
             openLink: 'Сілтемені ашу',
             unavailable: 'Алдын ала қарау қолжетімсіз',
-            unavailableLead: 'Құжатты компьютерде ашу үшін жүктеп алыңыз.',
+            unavailableLead: 'Құжатты құрылғыда ашу үшін жүктеп алыңыз.',
             overview: 'Құжатқа шолу',
             pages: 'Беттер / парақтар',
             pagesHint: 'Саны қарау құралының панелінде көрсетілген',
@@ -262,20 +310,20 @@
             uploadedLabel: 'Жүктелді',
             uploadedNote: 'сайтта: {site} · браузерде: {local}',
             uploadedNoteSite: 'тізімдегі құжат',
-            leftLabel: 'Жүктеу қалды',
+            leftLabel: 'Әлі жүктелмеген',
             leftNoteDone: 'Барлық құжат жүктелді',
             updatedOn: 'Жаңартылды: {date}',
             notUpdated: 'Әзірге ештеңе жүктелмеген',
             uploadedShort: 'жүктелді',
-            statusMissing: 'Жүктеу керек',
+            statusMissing: 'Жүктелмеген',
             statusPublished: 'Жүктелді',
             statusLocal: 'Браузерде',
             statusChecking: 'Тексерілуде…',
             statusQueued: 'Кезекте…',
             expected: 'қажет файл',
             inBrowser: 'тек осы браузерде сақталған',
-            uploadAction: 'Жүктеу',
-            uploadTitle: 'Құжатты жүктеңіз',
+            uploadAction: 'Жүктеп салу',
+            uploadTitle: 'Құжатты жүктеп салыңыз',
             uploadNeed: 'Бұл бөлімге қажет құжат:',
             dropHere: 'Файлды осында сүйреп әкеліңіз',
             or: 'немесе',
@@ -283,34 +331,34 @@
             formats: 'PDF, Word, Excel, PowerPoint немесе сурет',
             maxSize: '{mb} МБ-қа дейін',
             anySize: 'браузердегі жоба — көлемі шектелмейді',
-            linkLabel: 'Файл {mb} МБ-тан үлкен бе? Оны Google Дискіге жүктеп («Сілтемесі бар барлық адам» қолжетімділігі), сілтемені осында қойыңыз:',
+            linkLabel: 'Файлды Google Дискіге жүктеп салып, «Сілтемесі бар барлық адам» қолжетімділігін ашыңыз да, сілтемені осында қойыңыз:',
             linkPlaceholder: 'https://drive.google.com/file/d/…',
             saveLink: 'Сілтемені сақтау',
             badLink: 'https:// деп басталатын толық сілтемені қойыңыз',
             replace: 'Ауыстыру',
             remove: 'Жою',
-            removeDraft: 'Жобаны жою',
+            removeDraft: 'Браузерден жою',
             publishOne: 'Жариялау',
             confirmRemove: '«{title}» құжатын жою керек пе?',
-            confirmRemoveDraft: '«{title}» жобасын осы браузерден жою керек пе?',
-            tooLarge: 'Файл көлемі {size} — бұл {mb} МБ-тан көп. PDF-ті қысыңыз немесе файлды Google Дискіге жүктеп, төменге сілтеме қойыңыз.',
+            confirmRemoveDraft: '«{title}» осы браузерден жойылсын ба?',
+            tooLarge: 'Файл көлемі {size} — бұл {mb} МБ-тан көп. PDF-ті қысыңыз немесе файлды Google Дискіге жүктеп салып, сілтемесін төменге қойыңыз.',
             badType: 'Бұл формат сәйкес келмейді. PDF, Word, Excel, PowerPoint немесе сурет қажет.',
             badImage: '5 МБ-қа дейінгі JPG, PNG немесе WEBP суреті қажет.',
             preparing: 'Файл дайындалуда…',
             uploading: '«{title}» жүктелуде… {pct}%',
             saving: 'Сайтқа сақталуда…',
-            uploadedToast: '«{title}» құжаты сайтқа жүктелді',
+            uploadedToast: '«{title}» сайтта жарияланды',
             linkSaved: '«{title}» үшін сілтеме сақталды',
-            savedLocal: '«{title}» осы браузерде сақталды. Сайтта жариялау үшін кіріңіз.',
+            savedLocal: '«{title}» осы браузерде сақталды',
             removedToast: 'Құжат жойылды',
             uploadFail: 'Сақтау мүмкін болмады: {err}',
             whereSite: 'Сіз {user} ретінде кірдіңіз: файл бірден сайттың барлық келушілеріне көрінеді.',
-            whereLocal: 'Сіз кірмедіңіз: файл тек осы браузерде сақталады.',
+            whereLocal: 'Сіз жүйеге кірмегенсіз: файл тек осы браузерде сақталады.',
             whereLocalAction: 'Жариялау үшін кіру',
             login: 'Кіру',
             logout: 'Шығу',
             loginTitle: 'Құжаттарды жүктеу үшін кіру',
-            loginLead: 'Сайт репозиторийіне арналған GitHub қолжетімділік кілті қажет. Кілт тек сіздің браузеріңізде сақталады.',
+            loginLead: 'Сайт репозиторийіне арналған GitHub қолжетімділік кілті қажет. Кілт тек сіздің браузеріңізде сақталады. Кілт болмаса, сайтқа жауапты адамнан сұраңыз.',
             tokenLabel: 'Қолжетімділік кілті (token)',
             tokenPlaceholder: 'github_pat_…',
             remember: 'Осы құрылғыда есте сақтау',
@@ -326,12 +374,12 @@
             accountLead: 'Жүктелген файлдар {repo} репозиторийіне сақталады.',
             badgeOnline: 'Сайтқа жүктеу: {user}',
             badgeOffline: 'Кіру орындалмаған',
-            loginNotice: 'Қолжетімділік кілтімен кіргеннен кейін құжаттарды барлық келушілер көреді. Кірмесеңіз, файлдар тек осы браузерде сақталады.',
-            draftsNotice: '{n} — тек осы браузерде сақталған.',
+            loginNotice: 'Кірмей-ақ жүктеп сала беруге болады: файлдар осы браузерде сақталады және оларды ZIP мұрағаты ретінде жүктеп алуға болады. Құжаттарды сайттың барлық келушілері көруі үшін қолжетімділік кілтімен кіріңіз.',
+            draftsNotice: 'Тек осы браузерде сақталған: {what} — сайтта әзірге көрінбейді.',
             publishDrafts: 'Сайтта жариялау',
             downloadZip: 'ZIP мұрағатын жүктеп алу',
             zipBuilding: 'Мұрағат жиналуда…',
-            zipReady: 'Мұрағат жүктелді',
+            zipReady: 'Мұрағат жүктеп алынды',
             zipTooLarge: 'мұрағат 4 ГБ-тан үлкен — құжаттарды бөліп жүктеп алыңыз немесе сайтта жариялаңыз',
             publishProgress: 'Жариялау: {i} / {n}…',
             publishDone: 'Жарияланды: {n}',
@@ -394,6 +442,15 @@
         return text;
     }
 
+    function subWord(count) {
+        if (lang === 'kk') return 'ішкі санат';
+        const mod10 = count % 10;
+        const mod100 = count % 100;
+        if (mod10 === 1 && mod100 !== 11) return 'подкатегория';
+        if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return 'подкатегории';
+        return 'подкатегорий';
+    }
+
     function docWord(count) {
         if (lang === 'kk') return 'құжат';
         const mod10 = count % 10;
@@ -429,13 +486,18 @@
         archive: svg('<rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9M10 13h4"/>'),
         book: svg('<path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4V4Z"/><path d="M9 4v12a4 4 0 0 0-4 4"/>'),
         empty: svg('<path d="M3 7h6l2 2h10v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="M9 15h6"/>'),
+        arrowLeft: svg('<path d="M19 12H5M11 18l-6-6 6-6"/>'),
+        arrowRight: svg('<path d="M5 12h14M13 6l6 6-6 6"/>'),
+        close: svg('<path d="M6 6l12 12M18 6 6 18"/>'),
+        fileCheck: svg('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 14l2 2 4-4"/>'),
+        clock: svg('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
         person: '<svg viewBox="0 0 64 72" aria-hidden="true"><circle cx="32" cy="26" r="13" fill="currentColor"/><path d="M6 72c0-16 11.6-27 26-27s26 11 26 27Z" fill="currentColor"/></svg>'
     };
 
     const FOLDER_COLORS = [
-        ['#e1f6f5', '#087e87'], ['#fff0dc', '#d67b08'], ['#ffe7e4', '#dc5a4f'],
-        ['#eae8ff', '#6a59c8'], ['#e5f3ff', '#397fba'], ['#e6f7e9', '#318754'],
-        ['#fff1d9', '#c87512'], ['#e3f5f5', '#188691'], ['#ffe9f2', '#bc4e7c']
+        ['#e1f6f5', '#08656d'], ['#fff0dc', '#a65c00'], ['#ffe7e4', '#c0392f'],
+        ['#eeebff', '#5b4bc4'], ['#e5f1ff', '#2f68b7'], ['#e3f6e8', '#237a47'],
+        ['#f1f6dc', '#55700f'], ['#f8e9fa', '#8e3597'], ['#fde8f1', '#a8396a']
     ];
 
     /* ───────────── Форматы файлов ───────────── */
@@ -515,6 +577,14 @@
     const allDocs = node => [...visibleDocs(node), ...node.children.flatMap(allDocs)];
     const allVisible = () => catalogs.flatMap(allDocs);
     const countCategories = () => catIndex.size;
+    /* Порядок как на экране: сначала подразделы, потом документы самого раздела. */
+    const screenDocs = node => [...node.children.flatMap(screenDocs), ...visibleDocs(node)];
+    function nextMissing(afterId = null) {
+        const docs = catalogs.flatMap(screenDocs);
+        const start = afterId ? docs.findIndex(doc => doc.id === afterId) + 1 : 0;
+        return [...docs.slice(start), ...docs.slice(0, start)]
+            .find(doc => doc.id !== afterId && !Store.busy.has(doc.id) && slotState(doc.id).kind === 'missing') || null;
+    }
 
     /* ───────────── Хранилище сайта загрузки ───────────── */
 
@@ -531,6 +601,7 @@
         user: '',
         canPush: false,
         publishing: false,
+        linkOpen: new Set(),
         queue: Promise.resolve()
     };
 
@@ -593,6 +664,13 @@
         }
         return manifest;
     }
+
+    /* Ошибки храним как функции, чтобы текст переводился при смене языка. */
+    const setError = (id, key, vars) => Store.errors.set(id, () => t(key, vars));
+    const errorText = id => {
+        const value = Store.errors.get(id);
+        return typeof value === 'function' ? value() : (value || '');
+    };
 
     function slotState(id) {
         const draft = Store.drafts.get(id);
@@ -662,6 +740,8 @@
             ...extra
         };
     }
+
+    const shownLabel = source => (source?.label === 'DRIVE' ? t('fmtDrive') : source?.label === 'LINK' ? t('fmtLink') : source?.label);
 
     function sourceOf(doc) {
         if (!UPLOAD) {
@@ -792,6 +872,10 @@
         }
     }
 
+    /* До 900px боковая панель и шапка стоят над содержимым (как в style.css). */
+    const stackedLayout = () => window.matchMedia('(max-width: 900px)').matches;
+    const topOf = node => node.getBoundingClientRect().top + window.scrollY;
+
     /* ───────────── Отрисовка ───────────── */
 
     const openSubcategories = new Set();
@@ -814,6 +898,7 @@
         else html = viewHome();
 
         document.body.classList.toggle('document-mode', route.type === 'document');
+        document.body.dataset.route = route.type;
         el.workspace.innerHTML = `<div class="${keepScroll ? '' : 'workspace-enter'}">${html}</div>`;
 
         syncSearchControls(route, traversal);
@@ -825,15 +910,19 @@
         if (keepScroll) {
             scrollToY(savedScroll);
         } else if (scroll) {
+            const stacked = stackedLayout();
+            const workspaceTop = topOf(el.workspace) - 16;
             if (route.type === 'document') {
-                scrollToY(0);
+                scrollToY(stacked ? workspaceTop : 0);
             } else if (previousType === 'document' && listScroll.has(hash)) {
                 scrollToY(listScroll.get(hash));
+            } else if (route.type === 'search' && stacked) {
+                const panelTop = topOf($('#searchPanel')) - 8;
+                if (Math.abs(window.scrollY - panelTop) > 4) scrollToY(panelTop);
             } else if (route.type === 'home' && previousType === 'document') {
                 scrollToY(0);
-            } else {
-                const top = el.workspace.getBoundingClientRect().top + window.scrollY - 16;
-                if (window.scrollY > top) scrollToY(top);
+            } else if (window.scrollY > workspaceTop || (stacked && route.type !== 'home')) {
+                scrollToY(workspaceTop);
             }
         }
     }
@@ -875,7 +964,7 @@
     }
 
     function emptyState(titleKey = 'emptyTitle', leadKey = 'emptyLead') {
-        return `<div class="empty">${ICON.empty}<strong>${t(titleKey)}</strong>${t(leadKey)}</div>`;
+        return `<div class="empty">${ICON.empty}<strong>${t(titleKey)}</strong><span>${t(leadKey)}</span></div>`;
     }
 
     function progressOf(nodeDocs) {
@@ -886,7 +975,15 @@
     }
 
     function meter(percent, done = false) {
-        return `<span class="meter${done ? ' is-done' : ''}" aria-hidden="true"><i style="--p:${percent}%"></i></span>`;
+        return `<span class="meter${done ? ' is-done' : ''}${percent === 0 ? ' is-zero' : ''}" aria-hidden="true"><i style="--p:${percent}%"></i></span>`;
+    }
+
+    function sectionMeta(docs, progress) {
+        if (progress.total && progress.done === progress.total) return `${ICON.check}<b>${t('sectionDone')}</b>`;
+        const local = docs.filter(doc => slotState(doc.id).kind === 'local').length;
+        return `<b>${progress.done}</b> / ${progress.total} ${t('uploadedShort')}`
+            + (progress.done ? ` · <span class="left">${t('leftShort', {n: progress.total - progress.done})}</span>` : '')
+            + (local ? ` · <span class="in-browser">${t('inBrowserShort', {n: local})}</span>` : '');
     }
 
     function viewHome() {
@@ -899,13 +996,15 @@
             if (UPLOAD) {
                 const progress = progressOf(docs);
                 complete = progress.total > 0 && progress.done === progress.total;
-                meta = `<b>${progress.done}</b> / ${progress.total} ${t('uploadedShort')}`;
+                meta = sectionMeta(docs, progress);
                 extra = meter(progress.percent, complete);
             } else {
-                meta = `<b>${docs.length}</b> ${docWord(docs.length)} · ${t('open')}`;
+                meta = docs.length
+                    ? `<b>${docs.length}</b> ${docWord(docs.length)} · ${t('open')}`
+                    : `<span class="soon">${t('filling')}</span>`;
             }
-            return `<button class="category${complete ? ' is-complete' : ''}" type="button" data-go="${hrefCategory(category.id)}">
-                <span class="icon" style="--bg-c:${bg};--fg-c:${fg}">${ICON.folder}</span>
+            return `<button class="category${complete ? ' is-complete' : ''}" type="button" style="--bg-c:${bg};--fg-c:${fg}" data-go="${hrefCategory(category.id)}">
+                <span class="icon">${ICON.folder}</span>
                 <strong>${esc(title(category))}</strong>
                 <span class="category-meta">${meta}</span>${extra}
             </button>`;
@@ -923,7 +1022,7 @@
         let extra = '';
         if (UPLOAD) {
             const progress = progressOf(docs);
-            count = `${progress.done} / ${progress.total} ${t('uploadedShort')}`;
+            count = sectionMeta(docs, progress);
             extra = meter(progress.percent, progress.total > 0 && progress.done === progress.total);
         }
         const open = openSubcategories.has(node.id) ? ' open' : '';
@@ -947,20 +1046,21 @@
         let lead = t('sectionLead', {n: docs.length, word: docWord(docs.length)});
         if (UPLOAD) {
             const progress = progressOf(docs);
-            lead = `${progress.done} / ${progress.total} ${t('uploadedShort')}`;
+            lead = sectionMeta(docs, progress);
         }
         const subcategories = category.children.map(child => subcategoryHtml(child)).join('');
         const direct = visibleDocs(category);
-        let body = subcategories ? `<div class="subcategories">${subcategories}</div>` : '';
-        if (direct.length) body += documentRows(direct);
+        const [hueBg, hueFg] = FOLDER_COLORS[Math.max(0, catalogs.indexOf(entry.top)) % FOLDER_COLORS.length];
+        let body = subcategories ? `<div class="subcategories" style="--bg-c:${hueBg};--fg-c:${hueFg}">${subcategories}</div>` : '';
+        if (direct.length) body += (subcategories ? `<h4 class="list-label">${t('sectionDocs')}</h4>` : '') + documentRows(direct);
         else if (!subcategories) body += emptyState();
         return `<div class="view-toolbar"><div class="view-title">${breadcrumb(crumbs)}<h3>${esc(title(category))}</h3><p>${lead}</p></div>`
-            + `<button class="back-button" type="button" data-back="${esc(parentHref)}">← ${t('back')}</button></div>${body}`;
+            + `<button class="back-button" type="button" data-back="${esc(parentHref)}">${ICON.arrowLeft}<span>${t('back')}</span></button></div>${body}`;
     }
 
     function viewNotFound() {
         return `<div class="view-toolbar"><div class="view-title"><h3>${t('notFound')}</h3></div>`
-            + `<button class="back-button" type="button" data-back="#/">← ${t('back')}</button></div>`
+            + `<button class="back-button" type="button" data-back="#/">${ICON.arrowLeft}<span>${t('back')}</span></button></div>`
             + emptyState('notFound', 'notFoundLead');
     }
 
@@ -985,25 +1085,27 @@
         });
         const crumbs = [{label: t('categories'), href: '#/'}, {label: t('search')}];
         return `<div class="view-toolbar"><div class="view-title">${breadcrumb(crumbs)}<h3>${t('searchTitle')}</h3><p>${t('found')}: ${items.length}</p></div>`
-            + `<button class="back-button" type="button" data-action="clear-search">← ${t('back')}</button></div>`
-            + (items.length ? documentRows(items) : emptyState('noResults', 'noResultsLead'));
+            + `<button class="back-button" type="button" data-action="clear-search">${ICON.arrowLeft}<span>${t('back')}</span></button></div>`
+            + (items.length ? documentRows(items, true)
+                : (!UPLOAD && !allVisible().length ? emptyState('emptySiteTitle', 'emptySiteLead') : emptyState('noResults', 'noResultsLead')));
     }
 
-    function documentRows(docs) {
+    /* withCat: показывать раздел в подписи (только в результатах поиска). */
+    function documentRows(docs, withCat = false) {
         if (!docs.length) return emptyState();
-        return `<div class="document-list">${docs.map(doc => (UPLOAD ? uploadRow(doc) : docRow(doc))).join('')}</div>`;
+        return `<div class="document-list">${docs.map(doc => (UPLOAD ? uploadRow(doc, withCat) : docRow(doc, withCat))).join('')}</div>`;
     }
 
-    function docRow(doc) {
+    function docRow(doc, withCat = false) {
         const entry = docIndex.get(doc.id);
         const source = sourceOf(doc);
-        const info = [title(entry?.cat), source?.label === 'DRIVE' ? '' : source?.label, source?.size].filter(Boolean).join(' · ');
+        const info = [withCat ? title(entry?.cat) : '', source?.label === 'DRIVE' ? '' : source?.label, source?.size].filter(Boolean).join(' · ');
         return `<div class="doc-row is-docs" data-go="${hrefDocument(doc.id)}">
             <button class="doc-main" type="button" data-go="${hrefDocument(doc.id)}">
-                <span class="file-icon format-${esc(source?.fclass || 'file')}">${esc(source?.label || doc.format || 'PDF')}</span>
-                <span><span class="doc-name">${esc(title(doc))}</span><span class="doc-info">${esc(info)}</span></span>
+                <span class="file-icon format-${esc(source?.fclass || 'file')}">${esc(shownLabel(source) || doc.format || 'PDF')}</span>
+                <span><span class="doc-name">${esc(title(doc))}</span>${info ? `<span class="doc-info">${esc(info)}</span>` : ''}</span>
             </button>
-            <span class="doc-side"><span class="doc-arrow" aria-hidden="true">→</span></span>
+            <span class="doc-side"><span class="doc-arrow" aria-hidden="true">${ICON.arrowRight}</span></span>
         </div>`;
     }
 
@@ -1027,30 +1129,25 @@
         return `<input type="file" class="sr-only" data-upload="${esc(id)}" accept="${ACCEPT}" aria-label="${esc(label)}">`;
     }
 
-    function uploadRow(doc) {
+    function uploadRow(doc, withCat = false) {
         const entry = docIndex.get(doc.id);
         const state = slotState(doc.id);
         const source = sourceOf(doc);
         const busy = Store.busy.get(doc.id);
         const filled = state.kind === 'local' || state.kind === 'published';
-        const label = filled ? source.label : (doc.format || 'PDF');
+        const label = filled ? shownLabel(source) : (doc.format || 'PDF');
         const iconClass = filled ? `format-${source.fclass}` : 'is-missing';
-        let info;
-        if (filled) {
-            info = [title(entry.cat), source.label === 'DRIVE' || source.label === 'LINK' ? t('statusPublished') : '', source.size, source.date]
-                .filter(Boolean).join(' · ');
-            if (state.kind === 'local') info = `${[title(entry.cat), source.size].filter(Boolean).join(' · ')} · ${t('inBrowser')}`;
-        } else {
-            info = `${title(entry.cat)} · ${t('expected')}: ${doc.format || 'PDF'}`;
-        }
-        const error = Store.errors.get(doc.id);
+        const what = !filled ? '' : (source.kind === 'link' ? t(source.label === 'DRIVE' ? 'driveLink' : 'webLink') : source.size);
+        const when = state.kind === 'local' ? t('inBrowser') : (filled ? source.date : '');
+        const info = [withCat ? title(entry.cat) : '', what, when].filter(Boolean).join(' · ');
+        const error = errorText(doc.id);
         const action = filled
-            ? '<span class="doc-arrow" aria-hidden="true">→</span>'
+            ? `<span class="doc-arrow" aria-hidden="true">${ICON.arrowRight}</span>`
             : `<label class="row-upload"${busy ? ' hidden' : ''}>${ICON.upload}<span>${t('uploadAction')}</span>${fileInput(doc.id, `${t('uploadAction')}: ${title(doc)}`)}</label>`;
-        return `<div class="doc-row is-upload is-${state.kind}" data-drop="${esc(doc.id)}">
+        return `<div class="doc-row is-upload is-${state.kind}" data-drop="${esc(doc.id)}" data-go="${hrefDocument(doc.id)}">
             <button class="doc-main" type="button" data-go="${hrefDocument(doc.id)}">
                 <span class="file-icon ${iconClass}">${esc(label)}</span>
-                <span><span class="doc-name">${esc(title(doc))}</span><span class="doc-info">${esc(info)}</span>${error ? `<span class="doc-hint">${esc(error)}</span>` : ''}</span>
+                <span><span class="doc-name">${esc(title(doc))}</span>${info ? `<span class="doc-info">${esc(info)}</span>` : ''}${error ? `<span class="doc-hint">${esc(error)}</span>` : ''}</span>
             </button>
             <span class="doc-side">${statusChip(doc)}${action}</span>
             <span class="row-progress" data-progress-bar="${esc(doc.id)}" style="--p:${busy ? Math.round(busy.pct * 100) : 0}%"${busy ? '' : ' hidden'}></span>
@@ -1077,11 +1174,16 @@
         entry.path.forEach(node => crumbs.push({label: title(node), href: hrefCategory(node.id)}));
         crumbs.push({label: t('document')});
         const toolbar = `<div class="view-toolbar"><div class="view-title">${breadcrumb(crumbs)}<h3>${esc(title(doc))}</h3></div>`
-            + `<button class="back-button" type="button" data-back="${esc(backHrefForDocument(entry))}">← ${t('back')}</button></div>`;
+            + `<button class="back-button" type="button" data-back="${esc(backHrefForDocument(entry))}">${ICON.arrowLeft}<span>${t('back')}</span></button></div>`;
 
         if (UPLOAD) {
             const state = slotState(id);
             if (state.kind === 'missing' || state.kind === 'checking') return toolbar + uploadPanel(doc);
+            // Черновик больше лимита GitHub: сразу даём поле для ссылки на Google Диск.
+            if (state.kind === 'local' && state.record.kind === 'file' && state.record.size > MAX_BYTES) {
+                const source = sourceOf(doc);
+                return toolbar + viewerActions(doc, source) + `<div class="upload-panel is-inline">${linkForm(id, Store.busy.get(id))}</div>` + viewer(doc, source);
+            }
         }
         const source = sourceOf(doc);
         return toolbar + viewerActions(doc, source) + viewer(doc, source);
@@ -1093,12 +1195,12 @@
         if (source.kind === 'link') {
             if (source.url) buttons.push(`<a class="action-button" href="${esc(source.url)}" target="_blank" rel="noopener">${ICON.external}${t('openLink')}</a>`);
             if (source.download && source.download !== source.url) {
-                buttons.push(`<a class="download-button" href="${esc(source.download)}" target="_blank" rel="noopener">${ICON.download}${t('download')}</a>`);
+                buttons.push(`<a class="${UPLOAD ? 'action-button' : 'download-button'}" href="${esc(source.download)}" target="_blank" rel="noopener">${ICON.download}${t('download')}</a>`);
             }
         } else if (source.kind === 'remote') {
-            buttons.push(`<button class="download-button" type="button" data-action="download" data-id="${esc(doc.id)}">${ICON.download}${t('download')}</button>`);
+            buttons.push(`<button class="${UPLOAD ? 'action-button' : 'download-button'}" type="button" data-action="download" data-id="${esc(doc.id)}">${ICON.download}${t('download')}</button>`);
         } else {
-            buttons.push(`<a class="download-button" href="${esc(source.url)}" download="${esc(source.name || '')}">${ICON.download}${t('download')}</a>`);
+            buttons.push(`<a class="${UPLOAD ? 'action-button' : 'download-button'}" href="${esc(source.url)}" download="${esc(source.name || '')}">${ICON.download}${t('download')}</a>`);
         }
         if (UPLOAD) {
             const state = slotState(doc.id);
@@ -1108,8 +1210,11 @@
             }
             buttons.push(`<label class="action-button"${busy ? ' hidden' : ''}>${ICON.replace}${t('replace')}${fileInput(doc.id, `${t('replace')}: ${title(doc)}`)}</label>`);
             buttons.push(`<button class="action-button is-danger" type="button" data-action="remove" data-id="${esc(doc.id)}"${busy ? ' disabled' : ''}>${ICON.trash}${t(state.kind === 'local' ? 'removeDraft' : 'remove')}</button>`);
+            const next = nextMissing(doc.id);
+            const canPublish = state.kind === 'local' && Store.canPush;
+            if (next) buttons.push(`<button class="action-button${canPublish ? '' : ' is-primary'}" type="button" data-next data-go="${hrefDocument(next.id)}" title="${esc(title(next))}">${t('nextDoc')}${ICON.arrowRight}</button>`);
         }
-        const error = Store.errors.get(doc.id);
+        const error = errorText(doc.id);
         return `<div class="viewer-actions">${buttons.join('')}</div>${error ? `<p class="upload-error">${esc(error)}</p>` : ''}`;
     }
 
@@ -1133,13 +1238,13 @@
             preview = unavailable;
         }
 
-        let thumb = `<span class="page-placeholder format-${esc(source.fclass)}"><b>${esc(source.label)}</b></span>`;
+        let thumb = `<span class="page-placeholder format-${esc(source.fclass)}"><b>${esc(shownLabel(source))}</b></span>`;
         if (source.fclass === 'image') thumb = `<img src="${esc(source.url)}" alt="">`;
         else if (source.thumb) thumb = `<img src="${esc(source.thumb)}" alt="" referrerpolicy="no-referrer">`;
         const hint = source.kind === 'link' ? t('linkHint')
             : source.fclass === 'image' ? t('imageHint')
                 : `<b>${t('pages')}:</b> ${t('pagesHint')}`;
-        const meta = [source.label, source.size].filter(Boolean).join(' · ');
+        const meta = [shownLabel(source), source.size].filter(Boolean).join(' · ');
         return `<div class="viewer has-sidebar">
             <aside class="viewer-sidebar">
                 <strong>${t('overview')}</strong>
@@ -1154,33 +1259,39 @@
     function uploadPanel(doc) {
         const id = doc.id;
         const busy = Store.busy.get(id);
-        const error = Store.errors.get(id);
+        const error = errorText(id);
         const where = Store.canPush
             ? `<p class="where-note is-site">${ICON.globe}<span>${esc(t('whereSite', {user: Store.user || 'GitHub'}))}</span></p>`
             : `<p class="where-note">${ICON.info}<span>${t('whereLocal')} <button type="button" data-action="login">${t('whereLocalAction')}</button></span></p>`;
         return `<div class="upload-panel">
+            ${where}
             <div class="dropzone" data-drop="${esc(id)}">
                 <span class="dropzone-icon">${ICON.cloud}</span>
                 <strong>${t('uploadTitle')}</strong>
-                <p class="need-label">${t('uploadNeed')}</p>
                 <p class="need">${esc(title(doc))}</p>
                 <p class="drop-text">${t('dropHere')} ${t('or')}</p>
                 <label class="file-button"${busy ? ' hidden' : ''}>${ICON.upload}<span>${t('chooseFile')}</span>${fileInput(id, `${t('chooseFile')}: ${title(doc)}`)}</label>
-                <small>${t('formats')} · ${Store.canPush ? t('maxSize', {mb: MAX_MB}) : t('anySize')}</small>
+                <small>${t('formats')} · ${t('maxSize', {mb: MAX_MB})}</small>
                 <div class="upload-progress" data-progress-box="${esc(id)}"${busy ? '' : ' hidden'}>
-                    ${meter(busy ? Math.round(busy.pct * 100) : 0)}<span>${esc(busy?.label || '')}</span>
+                    ${meter(busy ? Math.round(busy.pct * 100) : 0)}<span class="upload-progress-label">${esc(busy?.label || '')}</span>
                 </div>
-                ${error ? `<p class="upload-error">${esc(error)}</p>` : ''}
+                ${error ? `<p class="upload-error" role="alert">${esc(error)}</p>` : ''}
             </div>
-            <form class="link-form" data-link-form="${esc(id)}">
-                <label for="link-${esc(id)}">${t('linkLabel', {mb: MAX_MB})}</label>
+            ${linkForm(id, busy)}
+        </div>`;
+    }
+
+    function linkForm(id, busy) {
+        return `<details class="link-form" data-link-details="${esc(id)}"${Store.linkOpen.has(id) ? ' open' : ''}>
+            <summary>${ICON.link}<span>${t('linkSummary', {mb: MAX_MB})}</span></summary>
+            <form data-link-form="${esc(id)}">
+                <label for="link-${esc(id)}">${t('linkLabel')}</label>
                 <div class="link-row">
                     <input id="link-${esc(id)}" name="link" type="url" inputmode="url" placeholder="${t('linkPlaceholder')}" autocomplete="off" required>
                     <button class="action-button is-primary" type="submit"${busy ? ' disabled' : ''}>${ICON.link}${t('saveLink')}</button>
                 </div>
             </form>
-            ${where}
-        </div>`;
+        </details>`;
     }
 
     /* PDF из GitHub отдаётся как octet-stream, поэтому скачиваем его и показываем через blob. */
@@ -1221,12 +1332,14 @@
 
     function renderStats() {
         const updated = formatDate(UPLOAD ? Store.manifest.updated_at : SITE.updated);
+        const ico = name => `<span class="stat-icon" aria-hidden="true">${ICON[name]}</span>`;
         if (!UPLOAD) {
             const total = allVisible().length;
+            const subCount = countCategories() - catalogs.length;
             el.stats.innerHTML = `
-                <div class="stat"><span>${t('categoryLabel')}</span><strong>${countCategories()}</strong><small>${t('categoryNote')}</small></div>
-                <div class="stat"><span>${t('documentLabel')}</span><strong>${total}</strong><small>${t(total ? 'documentNote' : 'documentNoteEmpty')}</small></div>
-                <div class="stat"><span>${t('lastUpdate')}</span><strong class="is-date">${esc(updated || '—')}</strong><small>${t('actual')}</small></div>`;
+                <div class="stat">${ico('folder')}<span>${t('sectionsLabel')}</span><strong>${catalogs.length}</strong><small>${subCount ? t('sectionsNoteSub', {n: subCount, word: subWord(subCount)}) : ''}</small></div>
+                <div class="stat">${ico('fileCheck')}<span>${t('documentLabel')}</span><strong>${total}</strong><small>${t(total ? 'documentNote' : 'documentNoteEmpty')}</small></div>
+                <div class="stat">${ico('clock')}<span>${t('lastUpdate')}</span><strong class="is-date">${esc(updated || '—')}</strong><small${updated ? ' class="is-ok"' : ''}>${t(updated ? 'actual' : 'notPublished')}</small></div>`;
             return;
         }
         const docs = allVisible();
@@ -1235,13 +1348,23 @@
         const site = progress.done - local;
         const left = progress.total - progress.done;
         const loading = !Store.loaded;
+        const sectionsDone = catalogs.filter(node => { const p = progressOf(allDocs(node)); return p.total > 0 && p.done === p.total; }).length;
+        const allSections = sectionsDone === catalogs.length;
+        const next = loading ? null : nextMissing();
+        const third = next
+            ? `<button class="stat-next" type="button" data-go="${hrefDocument(next.id)}" title="${esc(title(next))}">${ICON.upload}<span>${t('nextLabel')}: ${esc(title(next))}</span></button>`
+            : `<small${loading ? '' : ' class="is-ok"'}>${loading ? '' : t('leftNoteDone')}</small>`;
         el.stats.innerHTML = `
-            <div class="stat"><span>${t('categoryLabel')}</span><strong>${countCategories()}</strong><small>${t('categoryNote')}</small></div>
-            <div class="stat"><span>${t('uploadedLabel')}</span><strong>${loading ? '…' : progress.done}<em> / ${progress.total}</em></strong>${meter(progress.percent, left === 0)}<small>${local ? t('uploadedNote', {site, local}) : t('uploadedNoteSite')}</small></div>
-            <div class="stat"><span>${t('leftLabel')}</span><strong>${loading ? '…' : left}</strong><small>${left === 0 && !loading ? t('leftNoteDone') : (updated ? t('updatedOn', {date: esc(updated)}) : t('notUpdated'))}</small></div>`;
+            <div class="stat">${ico('folder')}<span>${t('sectionsLabel')}</span><strong>${loading ? '…' : sectionsDone}<em> / ${catalogs.length}</em></strong><small${allSections ? ' class="is-ok"' : ''}>${t(allSections ? 'sectionsNoteDone' : 'sectionsNote')}</small></div>
+            <div class="stat">${ico('fileCheck')}<span>${t('uploadedLabel')}</span><strong>${loading ? '…' : progress.done}<em> / ${progress.total}</em></strong>${meter(progress.percent, left === 0)}<small>${local ? t('uploadedNote', {site, local}) : (updated ? t('updatedOn', {date: esc(updated)}) : t('uploadedNoteSite'))}</small></div>
+            <div class="stat">${ico('upload')}<span>${t('leftLabel')}</span><strong>${loading ? '…' : left}</strong>${third}</div>`;
     }
 
     let lastNoticesHtml = null;
+    const NOTICE_KEY = 'attestation-login-notice-hidden';
+    function noticeDismissed() {
+        try { return localStorage.getItem(NOTICE_KEY) === '1'; } catch (_) { return false; }
+    }
 
     function renderNotices() {
         if (!UPLOAD) return;
@@ -1251,12 +1374,12 @@
         }
         const drafts = Store.drafts.size + (Store.settingsDraft ? 1 : 0);
         if (drafts) {
-            const label = `${Store.drafts.size} ${docWord(Store.drafts.size)}${Store.settingsDraft ? ` + ${t('schoolInfo').toLowerCase()}` : ''}`;
-            notices.push(`<div class="notice is-info"><span class="notice-text">${esc(t('draftsNotice', {n: label}))}</span><span class="notice-actions">`
-                + `<button class="action-button is-primary" type="button" data-action="publish-drafts"${Store.publishing ? ' disabled' : ''}>${ICON.cloud}${t('publishDrafts')}</button>`
+            const what = [Store.drafts.size ? `${Store.drafts.size} ${docWord(Store.drafts.size)}` : '', Store.settingsDraft ? t('schoolInfo').toLowerCase() : ''].filter(Boolean).join(' + ');
+            notices.push(`<div class="notice is-info"><span class="notice-text">${esc(t('draftsNotice', {what}))}<small>${t('draftsRisk')}</small></span><span class="notice-actions">`
+                + `<button class="action-button is-primary" type="button" data-action="publish-drafts"${Store.publishing ? ' disabled' : ''}>${ICON.cloud}${Store.canPush ? `${t('publishOne')} (${drafts})` : t('loginPublish')}</button>`
                 + `<button class="action-button" type="button" data-action="zip">${ICON.archive}${t('downloadZip')}</button></span></div>`);
-        } else if (!Store.canPush && currentRoute.type !== 'document') {
-            notices.push(`<div class="notice"><span class="notice-text">${t('loginNotice')}</span><span class="notice-actions"><button class="action-button is-primary" type="button" data-action="login">${ICON.user}${t('login')}</button></span></div>`);
+        } else if (!Store.canPush && currentRoute.type === 'home' && !noticeDismissed()) {
+            notices.push(`<div class="notice is-calm"><span class="notice-text">${t('loginNotice')}</span><span class="notice-actions"><button class="action-button is-primary" type="button" data-action="login">${ICON.user}${t('login')}</button><button class="action-button" type="button" data-action="dismiss-notice">${t('gotIt')}</button></span></div>`);
         }
         const html = notices.join('');
         if (html !== lastNoticesHtml) {
@@ -1272,8 +1395,9 @@
             el.badgeText.textContent = t(total ? 'updated' : 'filling');
             return;
         }
-        el.badge.classList.toggle('is-warn', !Store.canPush);
-        el.badgeText.textContent = Store.canPush ? t('badgeOnline', {user: Store.user || 'GitHub'}) : t('badgeOffline');
+        el.badge.classList.remove('is-warn');
+        el.badge.classList.toggle('is-off', !Store.canPush);
+        el.badgeText.textContent = Store.canPush ? t('badgeOnline', {user: Store.user || 'GitHub'}) : t('badgeLogin');
     }
 
     function renderSidebar() {
@@ -1390,8 +1514,14 @@
             }
         };
         handle.update(message, progress);
+        if (type === 'ok' || type === 'error') node.insertAdjacentHTML('afterbegin', `<span class="toast-icon">${type === 'ok' ? ICON.check : ICON.info}</span>`);
         el.toasts.appendChild(node);
-        if (!sticky) setTimeout(() => node.remove(), type === 'error' ? 9000 : 4500);
+        if (!sticky) {
+            let timer = setTimeout(() => node.remove(), type === 'error' ? 9000 : 4500);
+            node.addEventListener('mouseenter', () => clearTimeout(timer));
+            node.addEventListener('mouseleave', () => { timer = setTimeout(() => node.remove(), 2500); });
+            node.addEventListener('click', () => node.remove());
+        }
         return handle;
     }
 
@@ -1426,6 +1556,11 @@
 
         el.workspace.addEventListener('toggle', event => {
             const details = event.target;
+            if (details.matches?.('details[data-link-details]')) {
+                if (details.open) Store.linkOpen.add(details.dataset.linkDetails);
+                else Store.linkOpen.delete(details.dataset.linkDetails);
+                return;
+            }
             if (!details.matches?.('details[data-sub]')) return;
             if (details.open) openSubcategories.add(details.dataset.sub);
             else openSubcategories.delete(details.dataset.sub);
@@ -1459,6 +1594,7 @@
             if (event.key === 'Enter') {
                 clearTimeout(searchTimer);
                 runSearch();
+                if (window.matchMedia('(pointer: coarse)').matches) el.search.blur();
             }
         });
         el.select.addEventListener('change', () => {
@@ -1565,6 +1701,10 @@
             case 'edit-school':
                 openSchoolDialog();
                 break;
+            case 'dismiss-notice':
+                try { localStorage.setItem(NOTICE_KEY, '1'); } catch (_) { /* без сохранения */ }
+                renderNotices();
+                break;
             default:
                 break;
         }
@@ -1620,7 +1760,11 @@
         if (error?.status === 401) return t('errAuth');
         if (error?.status === 403 || error?.status === 404) return t('errForbidden');
         if (error?.status === 0) return t('errNetwork');
-        return message || t('errNetwork');
+        if (error?.status === 409 || error?.status === 422) return t('errBusy');
+        if (error?.status >= 400) return t('errServer', {code: error.status});
+        if (error instanceof DOMException) return t('errRead');
+        console.warn(error);
+        return t('errUnknown');
     }
 
     async function loadManifest() {
@@ -1810,7 +1954,7 @@
         $$(`[data-progress-box="${CSS.escape(id)}"]`).forEach(node => {
             node.hidden = false;
             node.querySelector('.meter i')?.style.setProperty('--p', percent);
-            const text = node.querySelector('span');
+            const text = node.querySelector('.upload-progress-label');
             if (text) text.textContent = label;
         });
     }
@@ -1825,13 +1969,28 @@
         if (currentRoute.type === 'document' && currentRoute.id !== id) {
             renderStats();
             renderNotices();
+            updateNextButton();
         } else {
             rerender();
         }
     }
 
+    /* Кнопка «Следующий документ» на открытом документе — без перерисовки страницы. */
+    function updateNextButton() {
+        const button = $('[data-next]', el.workspace);
+        if (!button) return;
+        const next = nextMissing(currentRoute.id);
+        if (!next) {
+            button.remove();
+            return;
+        }
+        button.dataset.go = hrefDocument(next.id);
+        button.title = title(next);
+    }
+
     /* После публикации черновик этого документа больше не нужен. */
     async function dropDraft(id) {
+        Store.errors.delete(id);
         if (!Store.drafts.has(id)) return;
         Store.drafts.delete(id);
         revokeUrl(`draft:${id}`);
@@ -1854,20 +2013,27 @@
         const ext = extOf(file.name);
         Store.errors.delete(id);
         if (!FORMATS[ext]) {
-            Store.errors.set(id, t('badType'));
+            setError(id, 'badType');
             rerender();
             return;
         }
         if (Store.canPush) {
             if (file.size > MAX_BYTES) {
-                Store.errors.set(id, t('tooLarge', {size: formatSize(file.size), mb: MAX_MB}));
+                setError(id, 'tooLarge', {size: formatSize(file.size), mb: MAX_MB});
+                Store.linkOpen.add(id);
                 rerender();
                 return;
             }
             setBusy(id, 0, t('statusQueued'));
             enqueue(() => publishFile(id, file, file.name)).catch(() => {});
         } else {
-            saveDraft(id, {kind: 'file', blob: file, name: file.name, size: file.size, ext});
+            saveDraft(id, {kind: 'file', blob: file, name: file.name, size: file.size, ext}).then(() => {
+                // Предупреждаем, только если сохранился именно этот файл.
+                if (file.size <= MAX_BYTES || Store.drafts.get(id)?.blob !== file) return;
+                setError(id, 'tooLargeDraft', {size: formatSize(file.size), mb: MAX_MB});
+                Store.linkOpen.add(id);
+                rerender();
+            });
         }
     }
 
@@ -1879,13 +2045,13 @@
             Store.errors.delete(id);
             toast(t('savedLocal', {title: docTitle(id)}), 'ok');
         } catch (_) {
-            Store.errors.set(id, t('errStorage'));
+            setError(id, 'errStorage');
             toast(t('errStorage'), 'error');
         }
         rerender();
     }
 
-    async function publishFile(id, blob, name) {
+    async function publishFile(id, blob, name, {quiet = false} = {}) {
         const entry = docIndex.get(id);
         const ext = extOf(name);
         const title = docTitle(id);
@@ -1911,12 +2077,11 @@
             });
             await dropDraft(id);
             Store.errors.delete(id);
-            toast(t('uploadedToast', {title}), 'ok');
+            if (!quiet) toast(t('uploadedToast', {title}), 'ok');
             return true;
         } catch (error) {
-            const message = t('uploadFail', {err: humanError(error)});
-            Store.errors.set(id, message);
-            toast(message, 'error');
+            setError(id, 'uploadFail', {get err() { return humanError(error); }});
+            toast(t('uploadFail', {err: humanError(error)}), 'error');
             if (error.status === 401) logout(true);
             throw error;
         } finally {
@@ -1930,7 +2095,7 @@
         const parsed = parseLink(value);
         Store.errors.delete(id);
         if (!parsed) {
-            Store.errors.set(id, t('badLink'));
+            setError(id, 'badLink');
             rerender();
             return;
         }
@@ -1942,7 +2107,7 @@
         enqueue(() => publishLink(id, parsed.url)).catch(() => {});
     }
 
-    async function publishLink(id, link) {
+    async function publishLink(id, link, {quiet = false} = {}) {
         try {
             await commitChange(`Добавлена ссылка: ${docTitle(id, 'ru')}`, manifest => {
                 const old = manifest.files[id];
@@ -1951,12 +2116,11 @@
             });
             await dropDraft(id);
             Store.errors.delete(id);
-            toast(t('linkSaved', {title: docTitle(id)}), 'ok');
+            if (!quiet) toast(t('linkSaved', {title: docTitle(id)}), 'ok');
             return true;
         } catch (error) {
-            const message = t('uploadFail', {err: humanError(error)});
-            Store.errors.set(id, message);
-            toast(message, 'error');
+            setError(id, 'uploadFail', {get err() { return humanError(error); }});
+            toast(t('uploadFail', {err: humanError(error)}), 'error');
             if (error.status === 401) logout(true);
             throw error;
         } finally {
@@ -2003,7 +2167,7 @@
 
     async function publishDrafts(onlyIds = null) {
         if (!Store.canPush) {
-            openLoginDialog();
+            openLoginDialog(() => publishDrafts(onlyIds));
             return;
         }
         if (Store.publishing) return;
@@ -2033,16 +2197,17 @@
             if (!Store.canPush) break;
             if (record.kind === 'file' && record.size > MAX_BYTES) {
                 skipped++;
-                Store.errors.set(record.id, t('tooLarge', {size: formatSize(record.size), mb: MAX_MB}));
+                setError(record.id, 'tooLargeDraft', {size: formatSize(record.size), mb: MAX_MB});
+                Store.linkOpen.add(record.id);
                 continue;
             }
             try {
                 if (record.kind === 'link') {
                     setBusy(record.id, 0.5, t('saving'));
-                    await enqueue(() => publishLink(record.id, record.link));
+                    await enqueue(() => publishLink(record.id, record.link, {quiet: true}));
                 } else {
                     setBusy(record.id, 0, t('statusQueued'));
-                    await enqueue(() => publishFile(record.id, record.blob, record.name));
+                    await enqueue(() => publishFile(record.id, record.blob, record.name, {quiet: true}));
                 }
                 await dropDraft(record.id);
                 published++;
@@ -2285,10 +2450,10 @@
         return node;
     }
 
-    function openLoginDialog() {
+    function openLoginDialog(onSuccess = null) {
         if (Store.canPush) {
             const node = dialog('accountDialog', `<div class="modal-form">
-                <div class="modal-head"><div><h3 id="accountDialog-title">${t('account')}</h3><p>${esc(t('accountLead', {repo: repoName}))}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
+                <div class="modal-head"><div><h3 id="accountDialog-title">${t('account')}</h3><p>${esc(t('accountLead', {repo: repoName}))}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">${ICON.close}</button></div>
                 <div class="modal-body"><div class="account-card">${ICON.check}<div><strong>${esc(t('loginOk', {user: Store.user || 'GitHub'}))}</strong><span>${esc(repoName)}</span></div></div></div>
                 <div class="modal-foot"><button class="action-button is-danger" type="button" id="logoutButton">${t('logout')}</button><button class="action-button is-primary" type="button" data-close>${t('close')}</button></div>
             </div>`);
@@ -2306,7 +2471,7 @@
         const steps = ['tokenStep1', 'tokenStep2', 'tokenStep3', 'tokenStep4']
             .map(key => `<li>${t(key, {repo: esc(repoName)})}</li>`).join('');
         const node = dialog('loginDialog', `<form class="modal-form" id="loginForm" method="dialog">
-            <div class="modal-head"><div><h3 id="loginDialog-title">${t('loginTitle')}</h3><p>${t('loginLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
+            <div class="modal-head"><div><h3 id="loginDialog-title">${t('loginTitle')}</h3><p>${t('loginLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">${ICON.close}</button></div>
             <div class="modal-body">
                 <div class="field"><label for="tokenInput">${t('tokenLabel')}</label><input id="tokenInput" type="password" autocomplete="off" spellcheck="false" placeholder="${t('tokenPlaceholder')}" required></div>
                 <label class="field-check"><input type="checkbox" id="rememberToken"> ${t('remember')}</label>
@@ -2335,6 +2500,7 @@
                 toast(t('loginOk', {user: user || 'GitHub'}), 'ok');
                 await loadManifest();
                 refreshAll();
+                if (onSuccess) onSuccess();
             } catch (error) {
                 message.className = 'form-message is-error';
                 message.textContent = error.status === 401 ? t('errAuth') : (error.status === 0 ? t('errNetwork') : t('loginFail', {repo: repoName}));
@@ -2385,7 +2551,7 @@
             </div></div>`;
         };
         const node = dialog('schoolDialog', `<form class="modal-form" id="schoolForm" method="dialog">
-            <div class="modal-head"><div><h3 id="schoolDialog-title">${t('schoolInfo')}</h3><p>${t('schoolInfoLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">×</button></div>
+            <div class="modal-head"><div><h3 id="schoolDialog-title">${t('schoolInfo')}</h3><p>${t('schoolInfoLead')}</p></div><button class="modal-close" type="button" data-close aria-label="${t('close')}">${ICON.close}</button></div>
             <div class="modal-body">
                 <div class="field-grid">${imageField('logo', 'fLogo')}${imageField('director_photo', 'fPhoto')}</div>
                 ${fields}
@@ -2460,6 +2626,7 @@
             }
         });
         node.showModal();
+        $('#s-site_name-kk', node)?.focus();
     }
 
     async function publishSettings(values, images = {}) {
@@ -2489,6 +2656,7 @@
     /* ───────────── Запуск ───────────── */
 
     async function initUpload() {
+        const autoY = window.scrollY;
         const token = storedToken();
         const tasks = [loadDrafts()];
         if (token) {
@@ -2503,10 +2671,12 @@
         await Promise.all(tasks);
         await loadManifest();
         refreshAll();
+        // Над содержимым могли появиться уведомления: если посетитель ещё не прокручивал, снова показываем содержимое.
+        if (parseRoute().type !== 'home' && stackedLayout() && Math.abs(window.scrollY - autoY) < 2) render({scroll: true});
     }
 
     bindEvents();
     renderChrome();
-    render();
+    render({scroll: parseRoute().type !== 'home'});
     if (UPLOAD) initUpload();
 })();
