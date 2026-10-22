@@ -495,7 +495,8 @@ body[data-route="document"] .view-title h3 { font-size: clamp(1.3rem, 1rem + .7v
 }
 .row-upload:hover, .doc-row.is-drop .row-upload { background: var(--teal); border-color: var(--teal); color: #fff; }
 .row-upload svg { width: 15px; height: 15px; }
-.row-upload:focus-within, label.action-button:focus-within { outline: 3px solid #d67b08; outline-offset: 2px; }
+.row-upload:focus-within { outline: 3px solid #d67b08; outline-offset: 2px; }
+label.action-button:has(input:focus-visible) { outline: 3px solid #d67b08; outline-offset: 2px; }
 .doc-row.is-drop { border-color: var(--teal); border-style: solid; background: var(--teal-soft); box-shadow: 0 0 0 4px rgba(8, 126, 135, .12); }
 .doc-row .row-progress { position: absolute; left: 0; bottom: 0; height: 4px; width: var(--p, 0%); background: var(--teal); transition: width .3s ease; }
 .doc-hint { display: block; margin-top: 5px; color: var(--warn-ink); font-size: var(--fs-xs); font-weight: 700; }
